@@ -253,7 +253,7 @@
 <div class="col-md-4">
 	<div class="form-group">
 		<label class="control-label">Customer State</label>
-		  <select name="state_name" id="state_name" class="form-control"  required="">
+		  <select name="state_name" id="state_name" class="form-control select2"  required="">
 	<option selected="">--State--</option>	  	
     <option value="Rajasthan">Rajasthan</option>
     <option value="Gujarat">Gujarat</option>
@@ -265,7 +265,7 @@
 <div class="col-md-4">
 	<div class="form-group">
 		<label class="control-label">Customer City</label>
-			  <select name="city_name" id="city_name" class="form-control" required="">
+			  <select name="city_name" id="city_name" class="form-control select2" required="">
 	   <option selected="">--City--</option>	  	
        <option value="Udaipur">Udaipur</option>
        <option value="Jaipur">Jaipur</option>
@@ -355,11 +355,7 @@
 </div>
 </div>
 
-
-
-<!----------------form end-------------------->
-			
-			
+<!----------------form end-------------------->		
 			
 		</div>
 	</div>
@@ -433,6 +429,7 @@ jQuery(document).ready(function() {
 	$('#city_name').select2();
 
 	});
+
 
 </script>
 
