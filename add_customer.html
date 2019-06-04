@@ -44,7 +44,7 @@
 
 </head>
 
-<body class="page-header-fixed page-quick-sidebar-over-content page-sidebar-closed-hide-logo ">
+<body class="page-header-fixed page-quick-sidebar-over-content ">
 <!-- BEGIN HEADER -->
 <div class="page-header -i navbar navbar-fixed-top">
 	<!-- BEGIN HEADER INNER -->
@@ -65,20 +65,13 @@
 		<!-- BEGIN TOP NAVIGATION MENU -->
 		<div class="top-menu">
 			<ul class="nav navbar-nav pull-right">
-			
-				<li class="dropdown dropdown-extended dropdown-inbox" id="header_inbox_bar">
-					<a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-close-others="true">
 				
-					
-					</a>
-					
-				</li>
 				
 				<li class="dropdown dropdown-user">
 					<a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-close-others="true">
-					<img alt="" class="img-circle" src="assets/admin/layout/img/admin_logo.jpg"/>
+					<img alt="" class="img-circle" src="assets/admin/layout/img/avatar3_small.jpg"/>
 					<span class="username username-hide-on-mobile">
-					Karnawat </span>
+					Nick </span>
 					<i class="fa fa-angle-down"></i>
 					</a>
 					<ul class="dropdown-menu dropdown-menu-default">
@@ -86,7 +79,6 @@
 							<a href="extra_profile.html">
 							<i class="icon-user"></i> My Profile </a>
 						</li>
-					
 						<li>
 							<a href="login.html">
 							<i class="icon-key"></i> Log Out </a>
@@ -94,7 +86,14 @@
 					</ul>
 				</li>
 				<!-- END USER LOGIN DROPDOWN -->
-				
+				<!-- BEGIN QUICK SIDEBAR TOGGLER -->
+				<!-- DOC: Apply "dropdown-dark" class after below "dropdown-extended" to change the dropdown styte -->
+				<li class="dropdown dropdown-quick-sidebar-toggler">
+					<a href="javascript:;" class="dropdown-toggle">
+					<i class="icon-logout"></i>
+					</a>
+				</li>
+				<!-- END QUICK SIDEBAR TOGGLER -->
 			</ul>
 		</div>
 		<!-- END TOP NAVIGATION MENU -->
@@ -102,6 +101,8 @@
 	<!-- END HEADER INNER -->
 </div>
 <!-- END HEADER -->
+<div class="clearfix">
+</div>
 
 <!-- BEGIN CONTAINER -->
 <div class="page-container">

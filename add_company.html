@@ -52,20 +52,13 @@
 		<!-- BEGIN TOP NAVIGATION MENU -->
 		<div class="top-menu">
 			<ul class="nav navbar-nav pull-right">
-			
-				<li class="dropdown dropdown-extended dropdown-inbox" id="header_inbox_bar">
-					<a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-close-others="true">
 				
-					
-					</a>
-					
-				</li>
 				
 				<li class="dropdown dropdown-user">
 					<a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-close-others="true">
-					<img alt="" class="img-circle" src="assets/admin/layout/img/admin_logo.jpg"/>
+					<img alt="" class="img-circle" src="assets/admin/layout/img/avatar3_small.jpg"/>
 					<span class="username username-hide-on-mobile">
-					Karnawat </span>
+					Nick </span>
 					<i class="fa fa-angle-down"></i>
 					</a>
 					<ul class="dropdown-menu dropdown-menu-default">
@@ -73,7 +66,6 @@
 							<a href="extra_profile.html">
 							<i class="icon-user"></i> My Profile </a>
 						</li>
-					
 						<li>
 							<a href="login.html">
 							<i class="icon-key"></i> Log Out </a>
@@ -81,7 +73,14 @@
 					</ul>
 				</li>
 				<!-- END USER LOGIN DROPDOWN -->
-				
+				<!-- BEGIN QUICK SIDEBAR TOGGLER -->
+				<!-- DOC: Apply "dropdown-dark" class after below "dropdown-extended" to change the dropdown styte -->
+				<li class="dropdown dropdown-quick-sidebar-toggler">
+					<a href="javascript:;" class="dropdown-toggle">
+					<i class="icon-logout"></i>
+					</a>
+				</li>
+				<!-- END QUICK SIDEBAR TOGGLER -->
 			</ul>
 		</div>
 		<!-- END TOP NAVIGATION MENU -->
@@ -89,6 +88,8 @@
 	<!-- END HEADER INNER -->
 </div>
 <!-- END HEADER -->
+<div class="clearfix">
+</div>
 
 <!-- BEGIN CONTAINER -->
 <div class="page-container">
@@ -201,7 +202,7 @@
 									<div class="portlet-body form">
 <!-- BEGIN FORM-->
 
-<form id="company_form" action="#" class="horizontal-form">
+<form id="company_form" name="company_form" method="post" action="#" class="horizontal-form">
 <div class="form-body">
 
 <div class="row">
@@ -234,7 +235,7 @@
 <div class="col-md-4">
 	<div class="form-group">
 		<label class="control-label">Country</label>
-		<select name="country_name" id="country_name" class="form-control select2">
+		<select name="country_name" id="country_name" class="form-control select2" required="">
 	<option value="">--Country--</option>	  	
     <option value="India">India</option>
     <option value="China">China</option>
@@ -246,7 +247,7 @@
 <div class="col-md-4">
 	<div class="form-group">
 		<label class="control-label">State</label>
-		  <select name="state_name" id="state_name" class="form-control select2" >
+		  <select name="state_name" id="state_name" class="form-control select2" required="" >
 	<option selected="">--State--</option>	  	
     <option value="Rajasthan">Rajasthan</option>
     <option value="Gujarat">Gujarat</option>
@@ -258,7 +259,7 @@
 <div class="col-md-4">
 	<div class="form-group">
 		<label class="control-label">City</label>
-			  <select name="state_name" id="city_name" class="form-control select2">
+			  <select name="state_name" id="city_name" class="form-control select2"required="">
 	   <option selected="">--City--</option>	  	
        <option value="Udaipur">Udaipur</option>
        <option value="Jaipur">Jaipur</option>
@@ -392,7 +393,7 @@
 						<input class="index" type="number" name="id">
 				</td>
 				<td style="vertical-align: inherit;"> 
-						<textarea name="company_address" class=" company_address form-control " id="company_address" required>  </textarea>
+						<textarea name="company_address" class=" company_address form-control " id="company_address" required="">  </textarea>
 				</td>
 				<td style="vertical-align: inherit;"> 
 						<input type="checkbox" class="form-control is_default" name="is_default" id="is_default" value="1" checked class="form-check-input">
@@ -484,19 +485,6 @@ jQuery(document).ready(function() {
 	$('#city_name').select2();
   
 	
-	
-	
-	$('#company_form').validate({
-		rules:{
-			company_name:{
-				required:true
-			},
-			company_mobno:{
-				required:true
-			}
-		}
-	
-	});
 });
 
 
@@ -594,6 +582,132 @@ add_row();
        }
  
 </script>
+
+<script>
+  
+  $(document).ready(function(){
+
+    jQuery('#company_gst').keyup(function() {
+    $(this).val($(this).val().toUpperCase());
+  });
+
+      jQuery('#company_name').keyup(function() {
+    var caps = jQuery('#company_name').val(); 
+    caps = caps.charAt(0).toUpperCase() + caps.slice(1);
+        jQuery('#company_name').val(caps);
+  });
+    
+$.validator.addMethod("gst", function(value3, element3) {
+    var gst_value = value3.toUpperCase();
+    var reg = /^([0-9]{2}[a-zA-Z]{4}([a-zA-Z]{1}|[0-9]{1})[0-9]{4}[a-zA-Z]{1}([a-zA-Z]|[0-9]){3}){0,15}$/;
+    if (this.optional(element3)) {
+      return true;
+    }
+    if (gst_value.match(reg)) {
+      return true;
+    } else {
+      return false;
+    }
+
+  }, "Please specify a valid GSTTIN Number");
+     $('#company_form').validate({
+
+  rules:{
+
+        company_name:{
+          required:true,
+         
+          lettersonly:true,
+        },
+
+        company_mobno:{
+                 required:true,
+                 number:true,
+                 rangelength: [10, 10],
+        },
+
+        company_email:{
+
+          required:true,
+          email:true,
+
+
+        },   
+
+        company_gst:{
+
+          required:true,
+          gst:true
+        },
+
+        country_name:{
+        	required:true,
+        },
+
+        state_name:{
+        	required:true,
+        },
+
+        city_name:{
+        	required:true,
+        },
+        company_panno:{
+        	required:true,
+        }
+
+        addresses:{
+
+                  required:true,
+        },
+
+
+      },
+
+      messages:{
+
+        company_name:{
+          required:"Please Enter Customer Name",
+          lettersonly:"Please enter only letters"
+        },
+
+         company_email:{
+           required:"Please enter email",
+          email:"Please enter valid email (Use @ ) format"
+        },
+
+         company_mobno:{
+            required: "Please Enter Mobile Number",
+            number:"Please Enter only Number",
+            rangelength: "Please Enter The 10 Number Mobile Number",
+        },
+
+      
+        country_name:{
+         required:"Please select Your Countary",
+        },
+
+         state_name:{
+         required:"Please select Your State",
+        },
+
+         city_name:{
+         required:"Please select Your City",
+        },
+
+
+
+         addresses:{
+         required:"Please Enter Customer Address",
+        },
+
+      }
+});
+
+});
+
+</script>
+
+
 
 <!-- END JAVASCRIPTS -->
 </body>
