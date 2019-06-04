@@ -72,7 +72,6 @@
 			<h3>KARNAWAT</h3>
 			</a>
 			<div class="menu-toggler sidebar-toggler hide">
-				<!-- DOC: Remove the above "hide" to enable the sidebar toggler button on header -->
 			</div>
 		</div>
 		<!-- END LOGO -->
@@ -83,35 +82,34 @@
 		<!-- BEGIN TOP NAVIGATION MENU -->
 		<div class="top-menu">
 			<ul class="nav navbar-nav pull-right">
-				<!-- BEGIN NOTIFICATION DROPDOWN -->
-				<!-- DOC: Apply "dropdown-dark" class after below "dropdown-extended" to change the dropdown styte -->
-			
+				
 				
 				<li class="dropdown dropdown-user">
 					<a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-close-others="true">
-					<img alt="" class="img-circle" src="assets/admin/layout/img/admin_logo.jpg"/>
+					<img alt="" class="img-circle" src="assets/admin/layout/img/avatar3_small.jpg"/>
 					<span class="username username-hide-on-mobile">
-					Karnawat </span>
+					Nick </span>
 					<i class="fa fa-angle-down"></i>
 					</a>
 					<ul class="dropdown-menu dropdown-menu-default">
-						
-                     <li>
+						<li>
 							<a href="extra_profile.html">
 							<i class="icon-user"></i> My Profile </a>
 						</li>
-					
 						<li>
 							<a href="login.html">
 							<i class="icon-key"></i> Log Out </a>
 						</li>
-
 					</ul>
-				     </li>
+				</li>
 				<!-- END USER LOGIN DROPDOWN -->
 				<!-- BEGIN QUICK SIDEBAR TOGGLER -->
 				<!-- DOC: Apply "dropdown-dark" class after below "dropdown-extended" to change the dropdown styte -->
-				
+				<li class="dropdown dropdown-quick-sidebar-toggler">
+					<a href="javascript:;" class="dropdown-toggle">
+					<i class="icon-logout"></i>
+					</a>
+				</li>
 				<!-- END QUICK SIDEBAR TOGGLER -->
 			</ul>
 		</div>
@@ -127,13 +125,12 @@
 	<!-- BEGIN SIDEBAR -->
 	
 
-
-	<div class="page-sidebar-wrapper">
-		
+<div class="page-sidebar-wrapper">
+	
 		<div class="page-sidebar navbar-collapse collapse">
 			
 			<ul class="page-sidebar-menu " data-keep-expanded="false" data-auto-scroll="true" data-slide-speed="200">
-				
+				<!-- DOC: To remove the sidebar toggler from the sidebar you just need to completely remove the below "sidebar-toggler-wrapper" LI element -->
 				<li class="sidebar-toggler-wrapper">
 					<!-- BEGIN SIDEBAR TOGGLER BUTTON -->
 					<div class="sidebar-toggler">
@@ -141,24 +138,15 @@
 					<!-- END SIDEBAR TOGGLER BUTTON -->
 				</li>
 				
-				<li class="sidebar-search-wrapper">
-					
-					
-					<!-- END RESPONSIVE QUICK SEARCH FORM -->
-				</li>
 				<li class="start active open">
 					<a href="javascript:;">
-					<i class="icon-home"></i>
-					<span class="title">Dashboard</span>
-					<span class="selected"></span>
-					
+						<i class="icon-home"></i>
+						<span class="title">Dashboard</span>
 					</a>
-				
 				</li>
-
 				<li class="start  open">
 					<a href="javascript:;">
-					<i class="fas fa-folder-open"></i>
+					<i class="fa fa-folder-open"></i>
 					
 					<span class="title">Master</span>
 				
@@ -183,10 +171,9 @@
 					</ul>
 				</li>
 
-
-					<li class="start  open">
+				<li class="start  open">
 					<a href="javascript:;">
-					<i class="fas fa-folder-open"></i>
+					<i class="fa fa-folder-open"></i>
 					
 					<span class="title">Performa Invoice</span>
 				
@@ -198,13 +185,19 @@
 							<i class="fa fa-plus"></i>
 							Add</a>
 						</li>
+						<li class="active">
+							<a href="performa_invoice_list.html">
+							<i class="fa fa-file"></i>
+							List</a>
+						</li>
+					
 					</ul>
 				</li>
-				
 			</ul>
 			<!-- END SIDEBAR MENU -->
 		</div>
 	</div>
+	<!-- END SIDEBAR -->
 
 
 	<!-- END SIDEBAR -->
