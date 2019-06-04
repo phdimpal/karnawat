@@ -282,9 +282,8 @@
 									closed
 								</td>
 							    <td>
-									<button class="btn btn green" >Open</button>
-									<button  class="btn btn red">Close</button>
-									
+									<button title="Closed" class="btn btn green alert_open">Open</button>
+									<button title="Opened" class="btn btn red alert_close">Close</button>
 								</td>
 							</tr>
 
@@ -303,8 +302,208 @@
 									closed
 								</td>
 								<td>
-									<button class="btn btn green" >Open</button>
-									<button  class="btn btn red">Close</button>
+									<button title="Closed" class="btn btn green alert_open">Open</button>
+									<button title="Opened" class="btn btn red alert_close">Close</button>
+									
+								</td>
+							</tr>
+							<tr class="odd gradeX">
+								
+								<td>
+									 3
+								</td>
+								<td>
+									Jun
+								</td>
+								<td>
+									2019
+								</td>
+								<td>
+									closed
+								</td>
+								<td>
+									<button title="Closed" class="btn btn green alert_open">Open</button>
+									<button title="Opened" class="btn btn red alert_close">Close</button>
+									
+								</td>
+							</tr>
+							<tr class="odd gradeX">
+								
+								<td>
+									 4
+								</td>
+								<td>
+									July
+								</td>
+								<td>
+									2019
+								</td>
+								<td>
+									closed
+								</td>
+								<td>
+									<button title="Closed" class="btn btn green alert_open">Open</button>
+									<button title="Opened" class="btn btn red alert_close">Close</button>
+									
+								</td>
+							</tr>
+							<tr class="odd gradeX">
+								
+								<td>
+									 5
+								</td>
+								<td>
+									August
+								</td>
+								<td>
+									2019
+								</td>
+								<td>
+									closed
+								</td>
+								<td>
+									<button title="Closed" class="btn btn green alert_open">Open</button>
+									<button title="Opened" class="btn btn red alert_close">Close</button>
+									
+								</td>
+							</tr>
+							<tr class="odd gradeX">
+								
+								<td>
+									 6
+								</td>
+								<td>
+									September
+								</td>
+								<td>
+									2019
+								</td>
+								<td>
+									closed
+								</td>
+								<td>
+									<button title="Closed" class="btn btn green alert_open">Open</button>
+									<button title="Opened" class="btn btn red alert_close">Close</button>
+									
+								</td>
+							</tr>
+							<tr class="odd gradeX">
+								
+								<td>
+									 7
+								</td>
+								<td>
+									October
+								</td>
+								<td>
+									2019
+								</td>
+								<td>
+									closed
+								</td>
+								<td>
+									<button title="Closed" class="btn btn green alert_open">Open</button>
+									<button title="Opened" class="btn btn red alert_close">Close</button>
+									
+								</td>
+							</tr>
+							<tr class="odd gradeX">
+								
+								<td>
+									 8
+								</td>
+								<td>
+									November
+								</td>
+								<td>
+									2019
+								</td>
+								<td>
+									closed
+								</td>
+								<td>
+									<button title="Closed" class="btn btn green alert_open">Open</button>
+									<button title="Opened" class="btn btn red alert_close">Close</button>
+									
+								</td>
+							</tr>
+							<tr class="odd gradeX">
+								
+								<td>
+									 9
+								</td>
+								<td>
+									December
+								</td>
+								<td>
+									2019
+								</td>
+								<td>
+									closed
+								</td>
+								<td>
+									<button title="Closed" class="btn btn green alert_open">Open</button>
+									<button title="Opened" class="btn btn red alert_close">Close</button>
+									
+								</td>
+							</tr>
+							<tr class="odd gradeX">
+								
+								<td>
+									 10
+								</td>
+								<td>
+									January
+								</td>
+								<td>
+									2020
+								</td>
+								<td>
+									closed
+								</td>
+								<td>
+									<button title="Closed" class="btn btn green alert_open">Open</button>
+									<button title="Opened" class="btn btn red alert_close">Close</button>
+									
+								</td>
+							</tr>
+							<tr class="odd gradeX">
+								
+								<td>
+									 11
+								</td>
+								<td>
+									February
+								</td>
+								<td>
+									2020
+								</td>
+								<td>
+									closed
+								</td>
+								<td>
+									<button title="Closed" class="btn btn green alert_open">Open</button>
+									<button title="Opened" class="btn btn red alert_close">Close</button>
+									
+								</td>
+							</tr>
+							<tr class="odd gradeX">
+								
+								<td>
+									 12
+								</td>
+								<td>
+									March
+								</td>
+								<td>
+									2020
+								</td>
+								<td>
+									closed
+								</td>
+								<td>
+									<button title="Closed" class="btn btn green alert_open">Open</button>
+									<button title="Opened" class="btn btn red alert_close">Close</button>
 									
 								</td>
 							</tr>
@@ -387,22 +586,46 @@
 <script>
 jQuery(document).ready(function() {
 
-$('.alert_conform').click(function() {
+$('.alert_open').click(function() {
 
 	$.confirm({
     title: 'Confirm!',
-    content: 'Are you sure you want to delete',
+    content: 'Are you sure you want to Closed',
     buttons: {
         OK: function () {
             $.alert({
             	title:'Confirm',
-            	content:'Delete the customer'
+            	content:'Closed the Financial Month'
             });
         },
         cancel: function () {
             $.alert({
             	title:'Cancel',
-            	content:'Cancel the customer'
+            	content:'Cancel to Closed the Financial Month'
+            });
+        }
+    }
+});
+
+
+});
+
+$('.alert_close').click(function() {
+
+	$.confirm({
+    title: 'Confirm!',
+    content: 'Are you sure you want to Opened',
+    buttons: {
+        OK: function () {
+            $.alert({
+            	title:'Confirm',
+            	content:'Opened the Financial Month'
+            });
+        },
+        cancel: function () {
+            $.alert({
+            	title:'Cancel',
+            	content:'Cancel to Opened the Financial Month'
             });
         }
     }
