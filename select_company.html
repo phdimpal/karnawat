@@ -48,21 +48,20 @@
 <!-- BEGIN LOGIN -->
 <div class="content">
 	<!-- BEGIN LOGIN FORM -->
-	<form class="login-form" action="index.html" method="post">
+	<form class="login-form" action="index.html" class="form-inline" method="post">
 		<h3 class="form-title">Select Financial Year</h3>
-		<div class="alert alert-danger display-hide">
-			<button class="close" data-close="alert"></button>
-        </div>
-        
-        <div>
+		
+        <div class="input-group input-medium">
             <select name="select_company" class="form-control select2 select_company">
                 <option value="">---Select---</option>
                 <option value="">01-04-2018 to 31-03-2019</option>
                 <option value="">01-04-2019 to 31-03-2020</option>
-            </select>   
+            </select> 
+            <span class="input-group-btn">
+            <button type="submit" class="btn blue icn-only"><i class="m-icon-swapright m-icon-white"></i></button>
+            </span>
         </div>
-		
-		
+       
 		
 	</form>
 	<!-- END LOGIN FORM -->
