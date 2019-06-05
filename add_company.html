@@ -289,15 +289,13 @@
 			<input type="text" id="company_panno" name="company_panno" class="form-control" placeholder="Pan Number">
 		</div>
 	</div>
-
-	<div class="col-md-4">
-	<div class="form-group">
-		<img src="#" id="profile-img-tag" width="100px" height="100px">
-		<label class="control-label">Signature</label>
-		<input type="file" name="signature-img" id="signature-img" class="" placeholder="Select file">
-
+<div class="col-md-4">
+		<div class="form-group">
+				<input type="file" name="photo" required  class="image" id="image" style="display:none;" accept="image/*">
+				<img id="imgshw1" src="assets/image/pen.jpg" class="img-responsive thumbnail" style="height: 50px;width: 50px;">
+				<label id="uploadimg" style="cursor: pointer;margin-top: -16px;margin-left: 8px;"><b>Upload Signature <span class="required">*</span></b></label>
+		</div>
 	</div>
-</div>
 <!--/span-->
 </div>
          <!--------------Start Add Row Functionality Address------------>
@@ -608,6 +606,30 @@ add_row();
         jQuery('#company_name').val(caps);
   });
     
+	$(".image").change(function(){
+
+var fup = document.getElementById("image");
+var fileName = fup.value;
+var ext = fileName.substring(fileName.lastIndexOf(".") + 1);
+if(ext == "jpg" || ext == "jpeg" || ext == "png")
+{
+ 
+							readPathh(this);
+
+} 
+else
+{
+ alert("Upload jpg/jpeg/png  files only");
+ fup.focus();
+ return false;
+}
+
+});
+
+$("#uploadimg").click(function() {
+ $("#image").click();
+});
+
 $.validator.addMethod("gst", function(value3, element3) {
     var gst_value = value3.toUpperCase();
     var reg = /^([0-9]{2}[a-zA-Z]{4}([a-zA-Z]{1}|[0-9]{1})[0-9]{4}[a-zA-Z]{1}([a-zA-Z]|[0-9]){3}){0,15}$/;
@@ -664,7 +686,7 @@ $.validator.addMethod("gst", function(value3, element3) {
         },
         company_panno:{
         	required:true,
-        }
+        },
 
         addresses:{
 
@@ -731,19 +753,24 @@ $.validator.addMethod("gst", function(value3, element3) {
     }
 });
 
-    function readURL(input) {
-        if (input.files && input.files[0]) {
-            var reader = new FileReader();
-            alert("file view");
-            reader.onload = function (e) {
-                $('#profile-img-tag').attr('src', e.target.result);
-            }
-            reader.readAsDataURL(input.files[0]);
-        }
-    }
-    $("#profile-img").change(function(){
-        readURL(this);
-    });
+function handlebrowseclick()
+		{
+			var fileinput = document.getElementById('image');
+			fileinput.click();
+		}
+		 function readPathh(input)
+		{ 
+			if (input.files && input.files[0])
+			{
+				var reader = new FileReader();
+				reader.onload = function (e)
+				{
+					$("#imgshw1").attr("src",e.target.result);
+
+				}
+				reader.readAsDataURL(input.files[0]);
+			}
+		}
 </script>
 </script>
 
