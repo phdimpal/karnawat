@@ -165,7 +165,29 @@
 						</li>
 					
 					</ul>
-				</li>
+                </li>
+                <li class="start  open">
+						<a href="javascript:;">
+						<i class="fa fa-folder-open"></i>
+						
+						<span class="title">Invoice</span>
+					
+						<span class="arrow"></span>
+						</a>
+						<ul class="sub-menu">
+							<li class="active">
+								<a href="invoice_add.html">
+								<i class="fa fa-plus"></i>
+								Add</a>
+							</li>
+							<li class="active">
+								<a href="invoice_list.html">
+								<i class="fa fa-file"></i>
+								List</a>
+							</li>
+						
+						</ul>
+					</li>
 			</ul>
 			<!-- END SIDEBAR MENU -->
 		</div>
@@ -175,7 +197,7 @@
 	<div class="page-content-wrapper">
 		<div class="page-content">
 			<h3 class="page-title">
-				Performa <small>Invoice</small>
+				Invoice
 			</h3>
 			<div class="page-bar">
 				<ul class="page-breadcrumb">
@@ -185,14 +207,14 @@
 						<i class="fa fa-angle-right"></i>
 					</li>
 					<li>
-						<a href="performa_invoice_list.html">Performa Invoice</a>
+						<a href="invoice_list.html"> Invoice</a>
 					</li>
 				</ul>
 			</div>
 			<div class="portlet box green util-btn-group">
 				<div class="portlet-title">
 					<div class="caption">
-						<i class="fa fa-gift"></i>Add Performa Invoice
+						<i class="fa fa-gift"></i>Add Invoice
 					</div>
 				
 				</div>
@@ -203,17 +225,14 @@
 								<div class="col-md-4">
 									<div class="form-group">
 										  <label class="control-label">Company
-										   </label>
-										  <select name="company_name" id="company_name" class="form-control select2">
-											<option selected="">--Company--</option>	  	
-										    <option value="India">Karnawat</option>
-										    <option value="China">Php Poets</option>
-								    
-								          </select>
+										   </label><br/>
+                                           <span>
+                                                <label>KARNAWAT COMPANY</label>
+                                            </span>	
 									</div>
 							   </div>
 															
-								<div class="col-md-4">
+								<div class="col-md-3">
 									<div class="form-group">
 										<label class="control-label">Invoice No.</label>
 										<br/>
@@ -221,28 +240,42 @@
 											<label>KARNAWAT/19-20/IN-001</label>
 										</span>	
 									</div>
-								</div>
+                                </div>
+                                <div class="col-md-4">
+                                        <div class="form-group">
+                                            <label class="control-label">Performa Invoice No.</label>
+                                            <br/>
+                                            <span>
+                                                <label>KARNAWAT/19-20/IN-001</label>
+                                            </span>	
+                                        </div>
+                                    </div>
 								<div class="col-md-4">
 									<div class="form-group">
-										<label class="control-label">Customer Name</label>
-										<select name="customer_id" class="form-control select2" id="customer_id">
-											<option>---Select---</option>
-											<option value="Karnawat">Karnawat</option>
-										</select>
+										<label class="control-label">Customer Name</label><br/>
+                                        <span>
+                                             <label>KARNAWAT CUSTOMER  COMPANY</label>
+                                         </span>
 									</div>
 								</div>
-								
+								<div class="col-md-3">
+                                        <div class="form-group">
+                                            <label class="control-label">GSTIN Number</label>
+                                            <br/>
+                                            <span>
+                                                    <label>09AAAFE817D2ZZO</label>
+                                            </span>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                            <div class="form-group">
+                                                <label class="control-label">Transaction Date</label>
+                                                <input type="text" id="transaction_date" name="transaction_date" class="form-control date-picker" placeholder="Date">
+                                            </div>
+                                        </div>
 							</div>	
 							<div class="row">
-
-								<div class="col-md-4">
-									<div class="form-group">
-										<label class="control-label">Transaction Date</label>
-										<input type="text" id="transaction_date" name="transaction_date" class="form-control date-picker" placeholder="Date">
-									</div>
-								</div>
-								
-								<div class="col-md-4">
+                                <div class="col-md-4">
 									<div class="form-group">
 										<label class="control-label">Customer Address</label>
 										<textarea name="customer_address" class=" company_address form-control " id="customer_address" required="">  </textarea>
@@ -250,13 +283,23 @@
 											<span>Select Default Address</span>
 										</a>
 									</div>
-								</div>
-								<div class="col-md-4">
-									<div class="form-group">
-										<label class="control-label">GSTIN Number</label>
-										<input type="text"  id="company_gst" name="company_gst" class="form-control" placeholder="Gst number" readonly="">
-									</div>
-								</div>
+                                </div>
+                                <div class="col-md-3">
+                                        <div class="form-group">
+                                             <label class="control-label">GRN No</label>
+                                             <input type="text" name="grn_no" class="form-control" id="grn_no">
+                                        </div>   
+                                </div>
+                                <div class="col-md-4">
+                                        <div class="form-group">
+                                             <label class="control-label">Final Destination</label>
+                                             <select name="destination" class="form-control seect2" id="destination">
+                                                 <option value="">--Select--</option>
+                                                 <option>Udaipur</option>
+                                                 <option>Jaipur</option>
+                                             </select>
+                                        </div>   
+                                </div>
 							</div>	
 							<div class="row">
 								<div class="col-md-12">
@@ -305,7 +348,30 @@
 										</table>
 									</div>	
 								</div>	
-							</div>
+                            </div>
+                            <div class="row">
+                                 <div class="col-md-4">
+                                    <div class="form-group">
+                                         <label class="control-label">Pre Carriage By</label>
+                                          <input type="text" name="carriage_by" class="form-control" id="carriage_by">
+                                    </div>   
+                                 </div>
+                                 <div class="col-md-4">
+                                        <div class="form-group">
+                                             <label class="control-label">Place Of Rcpt by Pre Carrier</label>
+                                              <select name="transporter_id" class="form-control select2" id="transporter_id">
+                                                  <option>--Select--</option>
+                                                  <option value="candigo">Caargo</option>
+                                              </select>
+                                        </div>   
+                                </div>  
+                                <div class="col-md-4">
+                                        <div class="form-group">
+                                             <label class="control-label">Veesel /Flight No</label>
+                                             <input type="text" name="flight_no" class="form-control" id="flight_no">
+                                        </div>   
+                                </div>   
+                            </div>
 							<div class="form-actions right">
 								<button type="button" class="btn default">Cancel</button>
 								<button type="submit" class="btn green"><i class="fa fa-check"></i> Save</button>
@@ -494,8 +560,11 @@ $(document).on('click','#plus_bank',function(){
             $(this).find('.description').attr('name','company_bank['+i+'][description]').ckeditor({
 	toolbar: [
 		{ name: 'styles', items: [ 'Styles', 'Format', 'Font', 'FontSize' ] },
-		{ name: 'colors', items: [ 'TextColor', 'BGColor' ] },
+		{name: "colors", items: ["TextColor", "BGColor"] },
+        {name: "insert", items: ["Table"] },
 		{ name: 'paragraph', groups: [ 'list', 'indent', 'blocks', 'align', 'bidi' ] },
+        { name: 'basicstyles', items: [ 'Bold', 'Italic', "Underline", "Strike", "Subscript", "Superscript", "-"]},
+        {name: "paragraph", items: ["NumberedList", "BulletedList", "-", "Outdent", "Indent", "-", "JustifyLeft", "JustifyCenter", "JustifyRight"]}
 	]
   
   });
