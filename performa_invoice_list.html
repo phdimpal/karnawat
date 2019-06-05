@@ -258,12 +258,15 @@
 						<a href="performa_invoice_list.html">Invoice List</a>
 					</li>
 				</ul>
-				</div>
+		</div>
 				
 			<!-- END PAGE HEADER-->
-			<!-- BEGIN PAGE CONTENT-->
+			<!-- BEGIN PAGE CONTENT-->	
+
+				      <button class="btn btn green align pull-right" id="btn_print"> print</button>
 		
-			<div class="row">
+			<div class="row" id="printarea" >
+
 				<div class="col-md-12 col-sm-12">
 					<!-- BEGIN EXAMPLE TABLE PORTLET-->
 					<div class="portlet box green util-btn-group">
@@ -496,6 +499,14 @@
 <script src="assets/admin/pages/scripts/components-pickers.js" type="text/javascript"></script>
 <script>
 jQuery(document).ready(function() {
+
+
+
+$("#btn_print").click(function () {
+    //Hide all other elements other than printarea.
+    $("#printarea").show();
+    window.print();
+});
 
 $('.alert_conform').click(function() {
 

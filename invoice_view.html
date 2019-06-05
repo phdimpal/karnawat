@@ -213,7 +213,10 @@
 	<!-- BEGIN CONTENT -->
 	<div class="page-content-wrapper">
 		<div class="page-content">
-			<div class="row">
+			
+							<button class="btn btn green align pull-right" id="btn_print"> print</button>
+
+			<div class="row" id="printarea">
 				<div class="col-md-12">
 					<div class="table responsive">
 						<table width="100%">
@@ -471,6 +474,13 @@ jQuery(document).ready(function() {
 	ComponentsPickers.init();
 	ComponentsDropdowns.init();
 	$('#customer_id').select2();
+
+	$("#btn_print").click(function () {
+    //Hide all other elements other than printarea.
+    $("#printarea").show();
+    window.print();
+});
+
 });
 
 add_row_bank();
