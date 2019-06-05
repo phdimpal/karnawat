@@ -141,58 +141,53 @@
 							<i class="icon-bar-chart"></i>
 							Financial Month</a>
 						</li>
-                        <li class="active">
-                                <a href="transporter_add.html">
-                                <i class="icon-bar-chart"></i>
-                                Transporter</a>
-                            </li>
-                        </ul>
-                    </li>
-    
-                    <li class="start  open">
-                        <a href="javascript:;">
-                        <i class="fa fa-folder-open"></i>
-                        
-                        <span class="title">Performa Invoice</span>
-                    
-                        <span class="arrow"></span>
-                        </a>
-                        <ul class="sub-menu">
-                            <li class="active">
-                                <a href="performa_invoice_add.html">
-                                <i class="fa fa-plus"></i>
-                                Add</a>
-                            </li>
-                            <li class="active">
-                                <a href="performa_invoice_list.html">
-                                <i class="fa fa-file"></i>
-                                List</a>
-                            </li>
-                        
-                        </ul>
-                    </li>
-                    <li class="start  open">
-                            <a href="javascript:;">
-                            <i class="fa fa-folder-open"></i>
-                            
-                            <span class="title">Invoice</span>
-                        
-                            <span class="arrow"></span>
-                            </a>
-                            <ul class="sub-menu">
-                                <li class="active">
-                                    <a href="invoice_add.html">
-                                    <i class="fa fa-plus"></i>
-                                    Add</a>
-                                </li>
-                                <li class="active">
-                                    <a href="invoice_list.html">
-                                    <i class="fa fa-file"></i>
-                                    List</a>
-                                </li>
-                            
-                            </ul>
-                        </li>
+					</ul>
+				</li>
+
+				<li class="start  open">
+					<a href="javascript:;">
+					<i class="fa fa-folder-open"></i>
+					
+					<span class="title">Performa Invoice</span>
+				
+					<span class="arrow"></span>
+					</a>
+					<ul class="sub-menu">
+						<li class="active">
+							<a href="performa_invoice_add.html">
+							<i class="fa fa-plus"></i>
+							Add</a>
+						</li>
+						<li class="active">
+							<a href="performa_invoice_list.html">
+							<i class="fa fa-file"></i>
+							List</a>
+						</li>
+					
+					</ul>
+                </li>
+                <li class="start  open">
+						<a href="javascript:;">
+						<i class="fa fa-folder-open"></i>
+						
+						<span class="title">Invoice</span>
+					
+						<span class="arrow"></span>
+						</a>
+						<ul class="sub-menu">
+							<li class="active">
+								<a href="invoice_add.html">
+								<i class="fa fa-plus"></i>
+								Add</a>
+							</li>
+							<li class="active">
+								<a href="invoice_list.html">
+								<i class="fa fa-file"></i>
+								List</a>
+							</li>
+						
+						</ul>
+					</li>
 			</ul>
 			<!-- END SIDEBAR MENU -->
 		</div>
@@ -227,15 +222,18 @@
 					<form id="company_form" action="#" class="horizontal-form">
 						<div class="form-body">
 							<div class="row">
-								<div class="col-md-4">
-									<div class="form-group">
-										  <label class="control-label">Company
-										   </label><br/>
-                                           <span>
-                                                <label>KARNAWAT COMPANY</label>
-                                            </span>	
-									</div>
-							   </div>
+                                    <div class="col-md-4">
+                                            <div class="form-group">
+                                                  <label class="control-label">Company
+                                                   </label>
+                                                  <select name="company_name" id="company_name" class="form-control select2">
+                                                    <option selected="">--Company--</option>	  	
+                                                    <option value="India">Karnawat</option>
+                                                    <option value="China">Php Poets</option>
+                                            
+                                                  </select>
+                                            </div>
+                                       </div>
 															
 								<div class="col-md-3">
 									<div class="form-group">
@@ -248,19 +246,17 @@
                                 </div>
                                 <div class="col-md-4">
                                         <div class="form-group">
-                                            <label class="control-label">Performa Invoice No.</label>
-                                            <br/>
-                                            <span>
-                                                <label>KARNAWAT/19-20/IN-001</label>
-                                            </span>	
+                                            <label class="control-label">Transaction Date</label>
+                                            <input type="text" id="transaction_date" name="transaction_date" class="form-control date-picker" placeholder="Date">
                                         </div>
                                     </div>
 								<div class="col-md-4">
 									<div class="form-group">
-										<label class="control-label">Customer Name</label><br/>
-                                        <span>
-                                             <label>KARNAWAT CUSTOMER  COMPANY</label>
-                                         </span>
+                                        <label class="control-label">Customer Name</label>
+                                        <select name="customer_id" class="form-control select2" id="customer_id">
+                                                <option>---Select---</option>
+                                                <option value="Karnawat">Karnawat</option>
+                                            </select>
 									</div>
 								</div>
 								<div class="col-md-3">
@@ -274,28 +270,23 @@
                                     </div>
                                     <div class="col-md-4">
                                             <div class="form-group">
-                                                <label class="control-label">Transaction Date</label>
-                                                <input type="text" id="transaction_date" name="transaction_date" class="form-control date-picker" placeholder="Date">
+                                                <label class="control-label">Customer Address</label>
+                                                <textarea name="customer_address" class=" company_address form-control " id="customer_address" required="">  </textarea>
+                                                <a href="#"  id="get_address">
+                                                    <span>Select Default Address</span>
+                                                </a>
                                             </div>
-                                        </div>
+                                        </div>    
 							</div>	
 							<div class="row">
+                               
                                 <div class="col-md-4">
-									<div class="form-group">
-										<label class="control-label">Customer Address</label>
-										<textarea name="customer_address" class=" company_address form-control " id="customer_address" required="">  </textarea>
-										<a href="#"  id="get_address">
-											<span>Select Default Address</span>
-										</a>
-									</div>
-                                </div>
-                                <div class="col-md-3">
                                         <div class="form-group">
                                              <label class="control-label">GRN No</label>
                                              <input type="text" name="grn_no" class="form-control" id="grn_no">
                                         </div>   
                                 </div>
-                                <div class="col-md-4">
+                                <div class="col-md-3">
                                         <div class="form-group">
                                              <label class="control-label">Final Destination</label>
                                              <select name="destination" class="form-control seect2" id="destination">
@@ -315,8 +306,7 @@
 												<tr>
 													<th class="thColor" style="width: 20px">S.No</th>
 													<th class="thColor" style="width: 150px">Description</th>
-                                                    <th class="thColor" style="width: 30px">HSN Code</th>
-                                                    <th class="thColor" style="width: 30px">Quantity</th>
+													<th class="thColor" style="width: 30px">Quantity</th>
 													<th class="thColor" style="width: 50px">Rate</th>
 													<th class="thColor" style="width: 80px">Amount</th>
 													<th class="thColor" style="width: 50px">Actions</th>
@@ -450,10 +440,7 @@
 			<td style="vertical-align: inherit;"> 
 				<textarea  name="description" id="description" class=" form-control description"  required >
 				</textarea>
-            </td>
-            <td style="vertical-align: inherit;"> 
-                    <input type="text" name="hsn_code" class="hsn_code form-control" id="hsn_code" required>
-            </td>        
+			</td>
 			<td style="vertical-align: inherit;"> 
 				<input type="text" name="quantity" class="quantity form-control" id="quantity" required>
 				<br/>
@@ -578,7 +565,6 @@ $(document).on('click','#plus_bank',function(){
   
   });
 
-            $(this).find('.hsn_code').attr('name','company_bank['+i+'][hsn_code]');
             $(this).find('.quantity').attr('name','company_bank['+i+'][quantity]');
             $(this).find('#getunit').attr('name','company_bank['+i+'][unit]').select2();
 
