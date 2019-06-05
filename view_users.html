@@ -11,6 +11,15 @@
 <meta content="" name="description"/>
 <meta content="" name="author"/>
 <!-- BEGIN GLOBAL MANDATORY STYLES -->
+
+<!--------------Custom CSS Start ------------------->
+
+
+<link href="assets/global/css/jquery-confirm.min.css" rel="stylesheet" type="text/css"/>
+
+     <!--------------Custom CSS End------------------->
+
+
 <link href="http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700&subset=all" rel="stylesheet" type="text/css"/>
 <link href="assets/global/plugins/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css"/>
 <link href="assets/global/plugins/simple-line-icons/simple-line-icons.min.css" rel="stylesheet" type="text/css"/>
@@ -36,7 +45,7 @@
 <link rel="shortcut icon" href="favicon.ico"/>
 </head>
 
-<body class="page-header-fixed page-quick-sidebar-over-content page-sidebar-closed-hide-logo page-container-bg-solid">
+<body class="page-header-fixed page-quick-sidebar-over-content ">
 <!-- BEGIN HEADER -->
 <div class="page-header -i navbar navbar-fixed-top">
 	<!-- BEGIN HEADER INNER -->
@@ -44,7 +53,7 @@
 		<!-- BEGIN LOGO -->
 		<div class="page-logo">
 			<a href="index.html">
-				<h3>KARNAWAT</h3>
+			<h3>KARNAWAT</h3>
 			</a>
 			<div class="menu-toggler sidebar-toggler hide">
 			</div>
@@ -57,13 +66,20 @@
 		<!-- BEGIN TOP NAVIGATION MENU -->
 		<div class="top-menu">
 			<ul class="nav navbar-nav pull-right">
+			
+				<li class="dropdown dropdown-extended dropdown-inbox" id="header_inbox_bar">
+					<a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-close-others="true">
 				
+					
+					</a>
+					
+				</li>
 				
 				<li class="dropdown dropdown-user">
 					<a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-close-others="true">
-					<img alt="" class="img-circle" src="assets/admin/layout/img/avatar3_small.jpg"/>
+					<img alt="" class="img-circle" src="assets/admin/layout/img/admin_logo.jpg"/>
 					<span class="username username-hide-on-mobile">
-					Nick </span>
+					Karnawat </span>
 					<i class="fa fa-angle-down"></i>
 					</a>
 					<ul class="dropdown-menu dropdown-menu-default">
@@ -71,6 +87,7 @@
 							<a href="extra_profile.html">
 							<i class="icon-user"></i> My Profile </a>
 						</li>
+					
 						<li>
 							<a href="login.html">
 							<i class="icon-key"></i> Log Out </a>
@@ -78,14 +95,7 @@
 					</ul>
 				</li>
 				<!-- END USER LOGIN DROPDOWN -->
-				<!-- BEGIN QUICK SIDEBAR TOGGLER -->
-				<!-- DOC: Apply "dropdown-dark" class after below "dropdown-extended" to change the dropdown styte -->
-				<li class="dropdown dropdown-quick-sidebar-toggler">
-					<a href="javascript:;" class="dropdown-toggle">
-					<i class="icon-logout"></i>
-					</a>
-				</li>
-				<!-- END QUICK SIDEBAR TOGGLER -->
+				
 			</ul>
 		</div>
 		<!-- END TOP NAVIGATION MENU -->
@@ -130,12 +140,6 @@
 							<i class="icon-bar-chart"></i>
 							Company</a>
 						</li>
-						</li>
-						<li class="active">
-							<a href="financial_month.html">
-							<i class="icon-bar-chart"></i>
-							Financial Month</a>
-						</li>
 						<li class="active">
 							<a href="unit_list.html">
 							<i class="icon-bar-chart"></i>
@@ -147,12 +151,6 @@
 							Customer</a>
 						</li>
 						<li class="active">
-							<a href="users_master_list.html">
-							<i class="icon-bar-chart"></i>
-							User</a>
-						</li>
-
-						<li class="active">
 							<a href="financial_year.html">
 							<i class="icon-bar-chart"></i>
 							Financial Year</a>
@@ -162,11 +160,6 @@
 							<a href="financial_month.html">
 							<i class="icon-bar-chart"></i>
 							Financial Month</a>
-						</li>
-						<li class="active">
-							<a href="transporter_add.html">
-							<i class="icon-bar-chart"></i>
-							Transporter</a>
 						</li>
 					</ul>
 				</li>
@@ -193,28 +186,6 @@
 					
 					</ul>
 				</li>
-				<li class="start  open">
-						<a href="javascript:;">
-						<i class="fa fa-folder-open"></i>
-						
-						<span class="title">Invoice</span>
-					
-						<span class="arrow"></span>
-						</a>
-						<ul class="sub-menu">
-							<li class="active">
-								<a href="invoice_add.html">
-								<i class="fa fa-plus"></i>
-								Add</a>
-							</li>
-							<li class="active">
-								<a href="invoice_list.html">
-								<i class="fa fa-file"></i>
-								List</a>
-							</li>
-						
-						</ul>
-					</li>
 			</ul>
 			<!-- END SIDEBAR MENU -->
 		</div>
@@ -222,18 +193,73 @@
 	<!-- END SIDEBAR -->
 	<!-- BEGIN CONTENT -->
 	<div class="page-content-wrapper">
-		<div class="page-content">
-			
-			
-			
+		<div class="page-content" style="min-height:1300px">
+				<h3 class="page-title">
+			User Detail 
+			</h3>
 
+			<div class="page-bar">
 
+				<ul class="page-breadcrumb grey-cascade">
+					<li>
+						<i class="fa fa-home"></i>
+						<a href="index.html">Home</a>
+						<i class="fa fa-angle-right"></i>
+					</li>
+					<li>
+						<a href="users_master_list.html">Users</a>
+						<i class="fa fa-angle-right"></i>
+					</li>
+					<li>
+						<a href="view_user.html">User Detail</a>
+					</li>
+				</ul>
+			</div>
+			<div class="row">
+				<div class="col-md-12">
+					<div class="portlet box green">
+						<div class="portlet-title">
+							<div class="caption">
+									<i class="fa fa-gift"></i>User Detail
+							</div>
+						</div>
+
+						<div class="portlet-body ">
+							<table class="table">
+								<tbody>
+									<tr>
+										<th scope="row"> Name</th>
+										<td> Johan dev </td>
+
+										<th scope="row">User Name</th>
+										<td>abcd</td> 
+									</tr>
+									<tr>
+										<th scope="row">User Mobile</th>
+										<td>996789943</td>
+
+										<th scope="row">User Email</th>
+										<td>Larry@gmail.com</td>
+										
+
+									</tr>
+									<tr>
+                                        <th scope="row">Joining Date</th>
+										<td>05-Jun-2019</td>
 			
-			
-			
-		</div>
-	</div>
-	
+										<th scope="row">User Address</th>
+										<td>udaipur</td>
+
+									</tr>
+									
+							</tbody>
+						</table>			<!-- BEGIN FORM-->
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>		
+	</div>		
 </div>
 <!-- END CONTAINER -->
 <!-- BEGIN FOOTER -->
@@ -246,6 +272,7 @@
 	</div>
 </div>
 <!-- END FOOTER -->
+
 <!-- BEGIN JAVASCRIPTS(Load javascripts at bottom, this will reduce page load time) -->
 <!-- BEGIN CORE PLUGINS -->
 <!--[if lt IE 9]>
