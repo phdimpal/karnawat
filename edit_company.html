@@ -136,6 +136,12 @@
 							<i class="icon-bar-chart"></i>
 							Company</a>
 						</li>
+						</li>
+						<li class="active">
+							<a href="financial_month.html">
+							<i class="icon-bar-chart"></i>
+							Financial Month</a>
+						</li>
 						<li class="active">
 							<a href="unit_list.html">
 							<i class="icon-bar-chart"></i>
@@ -147,6 +153,12 @@
 							Customer</a>
 						</li>
 						<li class="active">
+							<a href="users_master_list.html">
+							<i class="icon-bar-chart"></i>
+							User</a>
+						</li>
+
+						<li class="active">
 							<a href="financial_year.html">
 							<i class="icon-bar-chart"></i>
 							Financial Year</a>
@@ -156,6 +168,11 @@
 							<a href="financial_month.html">
 							<i class="icon-bar-chart"></i>
 							Financial Month</a>
+						</li>
+						<li class="active">
+							<a href="transporter_add.html">
+							<i class="icon-bar-chart"></i>
+							Transporter</a>
 						</li>
 					</ul>
 				</li>
@@ -182,6 +199,28 @@
 					
 					</ul>
 				</li>
+				<li class="start  open">
+						<a href="javascript:;">
+						<i class="fa fa-folder-open"></i>
+						
+						<span class="title">Invoice</span>
+					
+						<span class="arrow"></span>
+						</a>
+						<ul class="sub-menu">
+							<li class="active">
+								<a href="invoice_add.html">
+								<i class="fa fa-plus"></i>
+								Add</a>
+							</li>
+							<li class="active">
+								<a href="invoice_list.html">
+								<i class="fa fa-file"></i>
+								List</a>
+							</li>
+						
+						</ul>
+					</li>
 			</ul>
 			<!-- END SIDEBAR MENU -->
 		</div>
@@ -207,7 +246,7 @@
 									<div class="portlet-body form">
 <!-- BEGIN FORM-->
 
-<form id="company_form" action="#" class="horizontal-form">
+<form id="company_form" action="#" class="horizontal-form" enctype="multipart/form-data" runat="server">
 <div class="form-body">
 
 <div class="row">
@@ -288,6 +327,14 @@
 		<div class="form-group">
 			<label class="control-label">PAN Number</label>
 			<input type="text" id="company_panno" name="company_panno" class="form-control" placeholder="Pan Number">
+		</div>
+	</div>
+
+	<div class="col-md-4">
+		<div class="form-group">
+				<input type="file" name="photo" required  class="image" id="image" style="display:none;" accept="image/*">
+				<img id="imgshw1" src="assets/image/pen.jpg" class="img-responsive thumbnail" style="height: 50px;width: 50px;">
+				<label id="uploadimg" style="cursor: pointer;margin-top: -16px;margin-left: 8px;"><b>Upload Signature <span class="required">*</span></b></label>
 		</div>
 	</div>
 <!--/span-->
@@ -516,12 +563,57 @@ jQuery(document).ready(function() {
 	$('#state_name').select2();
 	$('#city_name').select2();
 
+
+		$(".image").change(function(){
+
+var fup = document.getElementById("image");
+var fileName = fup.value;
+var ext = fileName.substring(fileName.lastIndexOf(".") + 1);
+if(ext == "jpg" || ext == "jpeg" || ext == "png")
+{
+ 
+readPathh(this);
+
+} 
+else
+{
+ alert("Upload jpg/jpeg/png  files only");
+ fup.focus();
+ return false;
+}
+
+});
+
+$("#uploadimg").click(function() {
+ $("#image").click();
+});
+
+function handlebrowseclick()
+		{
+			var fileinput = document.getElementById('image');
+			fileinput.click();
+		}
+		 function readPathh(input)
+		{ 
+			if (input.files && input.files[0])
+			{
+				var reader = new FileReader();
+				reader.onload = function (e)
+				{
+					$("#imgshw1").attr("src",e.target.result);
+
+				}
+				reader.readAsDataURL(input.files[0]);
+			}
+		}
+
 	});
 </script>
 
 <!-----------script START for add row COMPANY BANK ADDRESS-------------->
      
 <script type="text/javascript">
+
 add_row_bank();
 
 $(document).on('click','#plus_bank',function(){
@@ -571,6 +663,9 @@ $(document).on('click','#plus_bank',function(){
           });
           
        }
+
+
+       
  
      </script>
      <!-----------script for add row COMPANY BANK ADDRESS END------------------->
