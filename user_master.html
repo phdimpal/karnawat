@@ -17,10 +17,7 @@
 <link href="assets/global/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
 <link href="assets/global/plugins/uniform/css/uniform.default.css" rel="stylesheet" type="text/css"/>
 <link href="assets/global/plugins/bootstrap-switch/css/bootstrap-switch.min.css" rel="stylesheet" type="text/css"/>
-<!----css for select menu start------>
 <link href="assets/global/plugins/select2/select2.css" rel="stylesheet" type="text/css"/>
-<!----css for select menu end------>
-
 <link href="assets/global/css/components.css" id="style_components" rel="stylesheet" type="text/css"/>
 <link href="assets/global/css/plugins.css" rel="stylesheet" type="text/css"/>
 <link href="assets/admin/layout/css/layout.css" rel="stylesheet" type="text/css"/>
@@ -180,7 +177,7 @@
 	<!-- BEGIN CONTENT -->
 	<div class="page-content-wrapper">
 		<div class="page-content">
-			<h3 class="page-title">Add Company</h3>
+			<h3 class="page-title">Add User</h3>
 			<div class="page-bar">
 				<ul class="page-breadcrumb grey-cascade">
 					<li>
@@ -189,44 +186,44 @@
 						<i class="fa fa-angle-right"></i>
 					</li>
 					<li>
-						<a href="company_list.html">Customer</a>
+						<a href="users_list.html">User</a>
 						<i class="fa fa-angle-right"></i>
 					</li>
 					<li>
-						<a href="add_company.html">Add Customer</a>
+						<a href="user_master.html">Add User</a>
 					</li>
 				</ul>
 			</div>
 			<div class="portlet box green util-btn-group">
 				<div class="portlet-title">
 					<div class="caption">
-						<i class="fa fa-gift"></i>Add Company
+						<i class="fa fa-gift"></i>Add User
 					</div>
 				</div>
 									<div class="portlet-body form">
 <!-- BEGIN FORM-->
 
-<form id="company_form" name="company_form" method="post" action="#" class="horizontal-form">
+<form id="user_form" name="user_form" method="post" action="#" class="horizontal-form">
 <div class="form-body">
 
 <div class="row">
 	<div class="col-md-4">
 	<div class="form-group">
-		<label class="control-label">Company Name</label>
-		<input type="text" name="company_name" id="company_name" class="form-control" placeholder="Name">
+		<label class="control-label">Name</label>
+		<input type="text" name="u_name" id="u_name" class="form-control" placeholder="Name">
 	</div>
 </div>
 <div class="col-md-4">
 	<div class="form-group">
-		<label class="control-label">Company Mobile</label>
-		<input type="number" name="company_mobno" id="company_mobno" class="form-control" placeholder="Mobile ">
+		<label class="control-label">User Mobile</label>
+		<input type="number" name="user_mobno" id="user_mobno" class="form-control" placeholder="Mobile ">
 	</div>
 </div>
 <!--/span-->
 <div class="col-md-4">
 	<div class="form-group">
-		<label class="control-label">Company Email</label>
-		<input type="email" id="company_email" name="company_email" class="form-control" placeholder="Email">
+		<label class="control-label">User Email</label>
+		<input type="email" id="user_email" name="user_email" class="form-control" placeholder="Email">
 		
 	</div>
 </div>
@@ -236,64 +233,43 @@
 
 <!--/row-->
 <div class="row">
+	<div class="col-md-4">
+	<div class="form-group">
+		<label class="control-label">User Name</label>
+		<input type="text" name="user_name" id="user_name" class="form-control" placeholder="Name">
+	</div>
+</div>
 <div class="col-md-4">
 	<div class="form-group">
-		<label class="control-label">Country</label>
-		<select name="country_name" id="country_name" class="form-control select2" required="">
-	<option value="">--Country--</option>	  	
-    <option value="India">India</option>
-    <option value="China">China</option>
-    
-          </select>
+		<label class="control-label">Password</label>
+		<input type="password" name="password" id="password" class="form-control" placeholder="Password ">
 	</div>
 </div>
 <!--/span-->
 <div class="col-md-4">
 	<div class="form-group">
-		<label class="control-label">State</label>
-		  <select name="state_name" id="state_name" class="form-control select2" required="" >
-	<option selected="">--State--</option>	  	
-    <option value="Rajasthan">Rajasthan</option>
-    <option value="Gujarat">Gujarat</option>
-    
-          </select>
+		<label class="control-label">Re-Password</label>
+		<input type="password" id="re_password" name="re_password" class="form-control" placeholder="Re-Password">
+		
 	</div>
 </div>
-
-<div class="col-md-4">
-	<div class="form-group">
-		<label class="control-label">City</label>
-			  <select name="state_name" id="city_name" class="form-control select2"required="">
-	   <option selected="">--City--</option>	  	
-       <option value="Udaipur">Udaipur</option>
-       <option value="Jaipur">Jaipur</option>
-       <option value="Jodhpur">Jodhpur</option>
-       <option value="Ajmer">Ajmer</option>
-               </select>
-	</div>
-  </div>
-
+<!--/span-->
 </div>
 
 <div class="row">
 	<div class="col-md-4">
 		<div class="form-group">
-			<label class="control-label">GSTIN Number</label>
-			<input type="text"  id="company_gst" name="company_gst" class="form-control" placeholder="Gst number">
+			<label class="control-label">Joining Date</label>
+			<input type="text"  id="join_date" name="join_date" class="form-control date-picker" placeholder="Date">
 		</div>
 	</div>
 <!--/span-->
-	<div class="col-md-4">
-		<div class="form-group">
-			<label class="control-label">PAN Number</label>
-			<input type="text" id="company_panno" name="company_panno" class="form-control" placeholder="Pan Number">
-		</div>
-	</div>
+	
 <!--/span-->
 </div>
          <!--------------Start Add Row Functionality Address------------>
 
-         <label class="control-label"> <h4> <strong>Company Address</strong> </h4></label>
+         <label class="control-label"> <h4> <strong>User Address</strong> </h4></label>
 <div class="row">
                             <div class="col-md-12">
                               <table class="table table-striped table-bordered">
@@ -313,49 +289,12 @@
                                  
                               </table>
                             </div>
-                    
-            
-           
+                               
         </div>
 
          <!---------------End Add Row Functionality Address------------>
 
-         <!---------------Start Add Row Functionality Bank------------>
-
-    <label class="control-label"><h4> <strong>Bank Detail</strong> </h4></label>
-
-    <div class="row">
-                            <div class="col-md-12" style="height: 150px; overflow-y: scroll;">
-                              <table class="table table-striped table-bordered">
-                                  <thead class="portlet box green util-btn-group">
-                                      <tr>
-                                          <th class="thColor" style="width: 20px">S.No</th>
-
-                                          <th class="thColor" style="width: 80px">Bank Name</th>
-
-                                          <th class="thColor" style="width: 60px">Branch Name</th>
-
-                                          <th class="thColor" style="width: 80px">Account Number</th>
-
-                                          <th class="thColor" style="width: 80px">RTGS Code</th>
-
-                                          <th class="thColor" style="width: 20px">Is Default</th>
-                                          <th class="thColor" style="width: 50px">Actions</th>
-                                      </tr>
-                                  </thead>
-                                  <tbody id="main-tbody_bank">
-                                  
-                                  </tbody>
-                                 
-                              </table>
-                            </div>
-                    
-            
-            
-        </div>
-
-
-          <!---------------End Add Row Functionality Bank------------>
+        
 </div>
 <div class="form-actions right">
 <button type="button" class="btn default">Cancel</button>
@@ -397,7 +336,7 @@
 						<input class="index" type="number" name="id">
 				</td>
 				<td style="vertical-align: inherit;"> 
-						<textarea name="company_address" class=" company_address form-control " id="company_address" required="">  </textarea>
+						<textarea name="user_address" class=" user_address form-control " id="user_address" required="">  </textarea>
 				</td>
 				<td style="vertical-align: inherit;"> 
 						<input type="checkbox" class="form-control is_default" name="is_default" id="is_default" value="1" checked class="form-check-input">
@@ -442,6 +381,8 @@
 <!----Ends code for address add table --->
 <!----Start JS -->
 <script src="assets/global/plugins/jquery.min.js" type="text/javascript"></script>
+<script src="https://cdn.ckeditor.com/4.5.1/standard/ckeditor.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/ckeditor/4.5.9/adapters/jquery.js"></script>
 <script src="assets/global/plugins/jquery-migrate.min.js" type="text/javascript"></script>
 <!-- IMPORTANT! Load jquery-ui.min.js before bootstrap.min.js to fix bootstrap tooltip conflict with jquery ui tooltip -->
 <script src="assets/global/plugins/jquery-ui/jquery-ui.min.js" type="text/javascript"></script>
@@ -452,45 +393,31 @@
 <script src="assets/global/plugins/jquery.cokie.min.js" type="text/javascript"></script>
 <script src="assets/global/plugins/uniform/jquery.uniform.min.js" type="text/javascript"></script>
 <script src="assets/global/plugins/bootstrap-switch/js/bootstrap-switch.min.js" type="text/javascript"></script>
-
-<!----for select jquery-->
+<!-- END CORE PLUGINS -->
 <script type="text/javascript" src="assets/global/plugins/bootstrap-select/bootstrap-select.min.js"></script>
 <script src="assets/global/plugins/select2/select2.min.js" type="text/javascript"></script>
 <script type="text/javascript" src="assets/global/plugins/jquery-multi-select/js/jquery.multi-select.js"></script>
-<!----end for select jquery-->
 
 <script src="assets/global/scripts/metronic.js" type="text/javascript"></script>
 <script src="assets/admin/layout/scripts/layout.js" type="text/javascript"></script>
 <script src="assets/admin/layout/scripts/quick-sidebar.js" type="text/javascript"></script>
 <script src="assets/admin/layout/scripts/demo.js" type="text/javascript"></script>
-<script src="assets/admin/pages/scripts/index.js" type="text/javascript"></script>
-<script src="assets/admin/pages/scripts/tasks.js" type="text/javascript"></script>
 <script src="assets/global/js/jquery.validate.min.js" type="text/javascript"></script>
-<script src="assets/global/js/additional-methods.min.js" type="text/javascript"></script>
+<script src="assets/global/plugins/bootstrap-datepicker/js/bootstrap-datepicker.js" type="text/javascript"></script>
 <script src="assets/admin/pages/scripts/components-pickers.js" type="text/javascript"></script>
 <script src="assets/admin/pages/scripts/components-dropdowns.js"></script>
 
 <!-- END PAGE LEVEL SCRIPTS -->
 <script>
-jQuery(document).ready(function() {    
+
+jQuery(document).ready(function() {   
 	Metronic.init(); // init metronic core componets
-	Layout.init(); // init layout
+	Layout.init(); 
 	QuickSidebar.init(); // init quick sidebar
-	Demo.init(); // init demo features
-	Index.init(); 
+	Demo.init();
 	ComponentsPickers.init();
 	ComponentsDropdowns.init();
-
 });
-jQuery(document).ready(function() {    
-
-	$('#country_name').select2();
-	$('#state_name').select2();
-	$('#city_name').select2();
-  
-	
-});
-
 
 add_row();
 
@@ -528,181 +455,108 @@ add_row();
 		{
 			i++;
 			$(this).find('.index').html(i);
-			$(this).find('.company_address').attr('name','company_addresses['+i+'][company_address]');
-			$(this).find('.is_default').attr('name','company_addresses['+i+'][is_default]');
+$(this).find('.user_address')
+.attr('name','user_addresses['+i+'][user_address]');
+$(this).find('.is_default')
+.attr('name','user_addresses['+i+'][is_default]');
 		});
 	}
- 
 
-	add_row_bank();
-
-	$(document).on('click','#plus_bank',function(){
-	   add_row_bank();
-	});
-	
-	$(document).on('click','#minus_bank',function(){
-	   var count=$('#main-tbody_bank').children().length;
-		if(count >= 2)
-		{
-		  $(this).parent().parent().remove();
-		  rename_row_bank();
-		}
-	});
-
-   function add_row_bank()
-    {
-      var tr = $('#sub-body_bank>tr:last').clone();
-
-      $('#main-tbody_bank').append(tr);
-
-           $('#main-tbody_bank').find('tr').each(function()
-        {
-            $(this).find('.product_id').attr('autofocus','autofocus');
-
-        });
-      rename_row_bank();
-    }
-
-      function rename_row_bank()
-      {
-        var i=0;
-        $('#main-tbody_bank').find('tr').each(function()
-        {
-            i++;
-            $(this).find('.index_bank').html(i);
-
-            $(this).find('.bank_name').attr('name','company_bank['+i+'][bank_name]');
-
-            $(this).find('.branch_name').attr('name','company_bank['+i+'][branch_name]');
-
-            $(this).find('.account_number').attr('name','company_bank['+i+'][account_number]');
-
-             $(this).find('.rtgs_code').attr('name','company_bank['+i+'][rtgs_code]');
-            
-             $(this).find('.is_default_bank').attr('name','company_bank['+i+'][is_default_bank]');
-            
-          });
-          
-       }
- 
 </script>
 
 <script>
   
-  $(document).ready(function(){
+ jQuery(document).ready(function() {
 
-    jQuery('#company_gst').keyup(function() {
-    $(this).val($(this).val().toUpperCase());
-  });
-
-      jQuery('#company_name').keyup(function() {
-    var caps = jQuery('#company_name').val(); 
+      jQuery('#u_name').keyup(function() {
+    var caps = jQuery('#u_name').val(); 
     caps = caps.charAt(0).toUpperCase() + caps.slice(1);
-        jQuery('#company_name').val(caps);
+        jQuery('#u_name').val(caps);
   });
     
-$.validator.addMethod("gst", function(value3, element3) {
-    var gst_value = value3.toUpperCase();
-    var reg = /^([0-9]{2}[a-zA-Z]{4}([a-zA-Z]{1}|[0-9]{1})[0-9]{4}[a-zA-Z]{1}([a-zA-Z]|[0-9]){3}){0,15}$/;
-    if (this.optional(element3)) {
-      return true;
-    }
-    if (gst_value.match(reg)) {
-      return true;
-    } else {
-      return false;
-    }
 
-  }, "Please specify a valid GSTTIN Number");
-     $('#company_form').validate({
+     $('#user_form').validate({
 
   rules:{
 
-        company_name:{
+        u_name:{
           required:true,
-         
-          lettersonly:true,
+          /*lettersonly:true,*/
         },
 
-        company_mobno:{
+        user_mobno:{
                  required:true,
                  number:true,
                  rangelength: [10, 10],
         },
 
-        company_email:{
+        user_email:{
 
           required:true,
           email:true,
-
-
         },   
 
-        company_gst:{
+        user_name:{
 
           required:true,
-          gst:true
         },
 
-        country_name:{
-        	required:true,
-        },
-
-        state_name:{
+        password:{
         	required:true,
         },
 
-        city_name:{
+        re_password:{
         	required:true,
+        	equalTo:"password",
         },
-        company_panno:{
-        	required:true,
-        }
 
         addresses:{
 
                   required:true,
         },
 
+        join_date:{
+        	required:true,
+        }
+
 
       },
 
       messages:{
 
-        company_name:{
-          required:"Please Enter Customer Name",
-          lettersonly:"Please enter only letters"
-        },
+        u_name:{
+          required:"Please Enter User  Name",
+/*          lettersonly:"Please enter only letters"
+*/        },
 
-         company_email:{
+         user_email:{
            required:"Please enter email",
           email:"Please enter valid email (Use @ ) format"
         },
 
-         company_mobno:{
+         user_mobno:{
             required: "Please Enter Mobile Number",
             number:"Please Enter only Number",
             rangelength: "Please Enter The 10 Number Mobile Number",
         },
 
-      
-        country_name:{
-         required:"Please select Your Countary",
+        password:{
+        	required:"Please Enter Password",
         },
 
-         state_name:{
-         required:"Please select Your State",
+        re_password:{
+        	required:"Please Re_Enter Password",
+        	equalTo:"Please Enter the Same Password",
         },
 
-         city_name:{
-         required:"Please select Your City",
+        join_date:{
+        	required:"Please select date",
         },
-
-
 
          addresses:{
-         required:"Please Enter Customer Address",
+         required:"Please Enter user Address",
         },
+
 
       }
 });
