@@ -206,7 +206,7 @@
 									<div class="portlet-body form">
 <!-- BEGIN FORM-->
 
-<form id="company_form" name="company_form" method="post" action="#" class="horizontal-form">
+<form id="company_form" name="company_form" method="post" action="#" class="horizontal-form" enctype="multipart/form-data" runat="server">
 <div class="form-body">
 
 <div class="row">
@@ -289,6 +289,15 @@
 			<input type="text" id="company_panno" name="company_panno" class="form-control" placeholder="Pan Number">
 		</div>
 	</div>
+
+	<div class="col-md-4">
+	<div class="form-group">
+		<img src="#" id="profile-img-tag" width="100px" height="100px">
+		<label class="control-label">Signature</label>
+		<input type="file" name="signature-img" id="signature-img" class="" placeholder="Select file">
+
+	</div>
+</div>
 <!--/span-->
 </div>
          <!--------------Start Add Row Functionality Address------------>
@@ -486,9 +495,7 @@ jQuery(document).ready(function() {
 
 	$('#country_name').select2();
 	$('#state_name').select2();
-	$('#city_name').select2();
-  
-	
+	$('#city_name').select2();	
 });
 
 
@@ -709,6 +716,35 @@ $.validator.addMethod("gst", function(value3, element3) {
 
 });
 
+</script>
+<script>
+	$('INPUT[type="file"]').change(function () {
+    var ext = this.value.match(/\.(.+)$/)[1];
+    switch (ext) {
+        case 'jpg':
+        case 'png':
+            $('#signature-img').attr('disabled', false);
+            break;
+        default:
+            alert('This  file type Not Allowed Please select jpg and png File type .');
+            this.value = '';
+    }
+});
+
+    function readURL(input) {
+        if (input.files && input.files[0]) {
+            var reader = new FileReader();
+            alert("file view");
+            reader.onload = function (e) {
+                $('#profile-img-tag').attr('src', e.target.result);
+            }
+            reader.readAsDataURL(input.files[0]);
+        }
+    }
+    $("#profile-img").change(function(){
+        readURL(this);
+    });
+</script>
 </script>
 
 
