@@ -300,6 +300,8 @@
                                       <tr >
                                           <th class="thColor"  style="width: 20px">S.No</th>
                                           <th class="thColor" style="width: 200px">Addresses</th>
+                                          <th class="thColor" style="width: 200px">State</th>
+                                          <th class="thColor" style="width: 200px">City</th>
                                           <th class="thColor" style="width: 50px">Is Default</th>
                                           <th class="thColor" style="width: 100px">Actions</th>
                                       </tr>
@@ -327,6 +329,26 @@
                     <textarea name="customer_address" class=" company_address form-control " id="customer_address" required="">  </textarea>
 
                     </td>
+
+                    <td style="vertical-align: bottom;"> 
+
+		                   <select name="state_name_add" id="state_name_add" class="form-control select2"  required="">
+							<option selected="">--State--</option>	  	
+						    <option value="Rajasthan">Rajasthan</option>
+						    <option value="Gujarat">Gujarat</option>
+          					</select>
+                    </td>
+                     <td style="vertical-align: bottom;"> 
+
+							<select name="city_name_add" id="city_name_add" class="form-control select2" required="">
+							<option selected="">--City--</option>	  	
+							<option value="Udaipur">Udaipur</option>
+							<option value="Jaipur">Jaipur</option>
+							<option value="Jodhpur">Jodhpur</option>
+							<option value="Ajmer">Ajmer</option>
+							</select>
+                    </td>
+
                     <td style="vertical-align: bottom;"> 
                      
                     <input type="checkbox" class="is_default" name="is_default" id="is_default" value="1" checked class="form-check-input">
@@ -427,14 +449,15 @@ jQuery(document).ready(function() {
 
 	$('#country_name').select2();
 	$('#state_name').select2();
+	$('#state_name_add').select2();
 	$('#city_name').select2();
+	$('#city_name_add').select2();
+
 
 	});
 
 
 </script>
-
-
 
      <!--------------Custom js script End------------------->
 
