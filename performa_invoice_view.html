@@ -50,7 +50,7 @@
 				
 				<li class="dropdown dropdown-user">
 					<a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-close-others="true">
-					<img alt="" class="img-circle" src="assets/admin/layout/img/avatar3_small.jpg"/>
+					<img alt="" class="img-circle" src=src="assets/admin/layout/img/default.jpg"/>
 					<span class="username username-hide-on-mobile">
 					Nick </span>
 					<i class="fa fa-angle-down"></i>
@@ -213,7 +213,8 @@
 	<!-- BEGIN CONTENT -->
 	<div class="page-content-wrapper">
 		<div class="page-content">
-			<div class="row">
+				<button class="btn btn green align pull-right" id="btn_print"> Print</button>
+			<div class="row" id="printarea" >
 				<div class="col-md-12">
 					<div class="table responsive">
 						<table width="100%">
@@ -457,138 +458,16 @@ jQuery(document).ready(function() {
 	QuickSidebar.init(); // init quick sidebar
 	ComponentsPickers.init();
 	ComponentsDropdowns.init();
-	$('#customer_id').select2();
+
+	
+	$("#btn_print").click(function () {
+			//Hide all other elements other than printarea.
+			$("#printarea").show();
+			window.print();
+	});
 });
 
-add_row_bank();
-rename_row_bank();
-$(document).on('click','#plus_bank',function(){
-           add_row_bank();
-      });
-       $(document).on('click','#minus_bank',function(){
-           var count=$('#main_tbody_bank').children().length;
-            if(count >= 2)
-            {
-              $(this).parent().parent().remove();
-              rename_row_bank();
-            }
-        });
 
-   function add_row_bank()
-    {
-      var tr = $('#sub-body_bank>tr:last').clone();
-
-      $('#main_tbody_bank').append(tr);
-
-           $('#main_tbody_bank').find('tr').each(function()
-        {
-            $(this).find('.product_id').attr('autofocus','autofocus');
-
-        });
-      rename_row_bank();
-    }
-
-      function rename_row_bank()
-      {
-        var i=0;
-        $('#main_tbody_bank').find('tr').each(function()
-        {
-            i++;
-            $(this).find('.index_bank').html(i);
-
-            $(this).find('.description').attr('name','company_bank['+i+'][description]').ckeditor({
-	toolbar: [
-		{ name: 'styles', items: [ 'Styles', 'Format', 'Font', 'FontSize' ] },
-		{ name: 'colors', items: [ 'TextColor', 'BGColor' ] },
-		{ name: 'paragraph', groups: [ 'list', 'indent', 'blocks', 'align', 'bidi' ] },
-	]
-  
-  });
-
-            $(this).find('.quantity').attr('name','company_bank['+i+'][quantity]');
-            $(this).find('#getunit').attr('name','company_bank['+i+'][unit]').select2();
-
-            $(this).find('.rate').attr('name','company_bank['+i+'][rate]');
-
-             $(this).find('.ammount').attr('name','company_bank['+i+'][ammount]');
-            
-            
-          });
-          
-       }
- 
-     
-        $(document).ready(function () {
-            $("#customer_id").change(function () {
-                var value = $(this).val();
-                var address = "Phppoets It solution,Subhash nagar ,sevashram"
-                $("#customer_address").val(address);
-
-                var gst_val="08AFAPG9816M1Z4";
-
-                $("#company_gst").val(gst_val);
-            });
-
-        //function for validate the address field is null or not
-
-            $("#get_address").click(function () {
-
-            var	texttwo =$('#customer_address').val();
-              
-                 if(texttwo == '')
-                 {
-					alert(" Please Select Customer Name First");
-					return false;
-                 
-                 }             
-             
-            });
-
-		///get value for calculation	
-			$(".quantity").blur(function () {
-					
-				calculation();
-			
-			});
-			$(".rate").blur(function () {
-					
-				calculation();
-			
-			});
-          
-        });
-		
-		$('#getunit').change(function(){
-			var unit = $(this).val(); 
-			$(this).closest('tr').find('.showrate').html('INR/'+unit);
-			
-		});	
-		
-		function calculation(){
-			var quantity=0;
-			var rate=0;
-			var amount=0;
-			$('#main_table tbody#main_tbody_bank tr.main_tb').each(function(){ 
-				 quantity = $(this).find('.quantity').val();
-				
-				 rate = $(this).find('.rate').val();
-				 
-				 amount = quantity*rate;
-				 
-				 if(isNaN(amount)){
-					amount
-				 }
-				 $(this).find('.ammount').val(amount);
-					
-			});
-			
-			$('.sub_total').val(amount);
-			var cgst =amount*9/100;
-			$('.cgst_amt').val(cgst);
-			$('.sgst_amt').val(cgst);
-			$('.total_amt').val(amount+cgst*2);
-		
-		}
 
 </script>
 <!-- END JAVASCRIPTS -->
