@@ -563,6 +563,25 @@ $(document).ready(function(){
 });
 </script>
 
+<script>
+jQuery(document).ready(function($){
+    var offset = $( "#header" ).offset();
+    checkOffset();
+
+    $(window).scroll(function() {
+        checkOffset();
+    });
+
+    function checkOffset() {
+        if ( $(document).scrollTop() > offset.top){
+            $('#header').addClass('fixed');
+        } else {
+            $('#header').removeClass('fixed');
+        } 
+    }
+
+});
+</script>
 
 <!--  <script>
      

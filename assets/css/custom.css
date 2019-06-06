@@ -28,3 +28,21 @@
 	.table-align{
 		vertical-align:inherit !important;
 	}
+
+	table th {
+	background-color: #26a69a;	
+    position: sticky;
+    position: sticky;
+    top: 0;
+    
+    
+}
+
+table tr th {
+	background-color: #26a69a;	
+    position: sticky;
+    position: sticky;
+    top: 0;
+    
+    
+}
