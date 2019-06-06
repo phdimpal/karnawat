@@ -560,7 +560,8 @@ $(document).on('click','#plus',function(){
             i++;
             $(this).find('.index').html(i);
             $(this).find('.company_address').attr('name','company_addresses['+i+'][company_address]');
-            
+						$(this).find('#state_name_add').attr('name','company_addresses['+i+'][state_id]').select2();
+						$(this).find('#city_name_add').attr('name','company_addresses['+i+'][city_id]').select2();
              $(this).find('.is_default').attr('name','company_addresses['+i+'][is_default]');
             
           });
