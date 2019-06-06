@@ -30,23 +30,11 @@
 	}
 
 
-	table th {
-	background-color: #26a69a;	
-    position: sticky;
-    position: sticky;
-    top: 0;
-     z-index: 5;
-    
-    
-}
+	.tablescroll {
+		background-color: #26a69a;	
+		position: sticky;
+		top: 0;
+		z-index: 11;
+	}
 
-table tr th {
-	background-color: #26a69a;	
-    position: sticky;
-    position: sticky;
-    top: 0;
-     z-index: 5;
-    
-    
-}
 
