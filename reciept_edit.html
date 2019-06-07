@@ -258,7 +258,7 @@
 				
 				</div>
 				<div class="portlet-body form">
-					<form id="company_form" action="#" class="horizontal-form">
+					<form id="reciept_form" action="#" class="horizontal-form">
 						<div class="form-body">
 							<div class="row">
 								<div class="col-md-4">
@@ -274,7 +274,8 @@
 								<div class="col-md-4">
 									<div class="form-group">
 										<label class="control-label">Transaction Date</label>
-										<input type="text" id="transaction_date" name="transaction_date" class="form-control date-picker" placeholder="Date">
+										<input type="text" required
+										id="transaction_date" name="transaction_date" class="form-control date-picker" placeholder="Date">
 									</div>
 								</div>
 							</div>	
@@ -342,7 +343,7 @@
                                 </div>
 							<div class="form-actions right">
 								<button type="button" class="btn default">Cancel</button>
-								<button type="submit" class="btn green"><i class="fa fa-check"></i> Edit</button>
+								<button type="submit" class="btn green"><i class="fa fa-check"></i> Update</button>
 							</div>							
 						</div>	
 					</form>	
@@ -429,8 +430,8 @@
                 
                 <td width="10%" valign="top">
                     <select name="cr_dr" class="form-control select2 cr_dr" >
-                        <option value="Cr" selected="selected">Cr</option>
-                        <option value="Dr">Dr</option>
+                        <option value="Cr">Cr</option>
+                        <option value="Dr"  selected="selected">Dr</option>
                     </select>
                 </td>
                 <td width="65%" valign="top">
@@ -514,22 +515,33 @@ jQuery(document).ready(function() {
 	QuickSidebar.init(); // init quick sidebar
 	ComponentsPickers.init();
 	ComponentsDropdowns.init();
+
+	$('#reciept_form').validate();
   //////start code for reference detial
   $('.delete-tr').die().live('click',function() 
 			{	
-				$(this).closest('tr.MainTr').remove();
-				renameMainRows();
+                var count=$(this).closest("table tbody").find("tr").length;
+               
+               if(count >= 2)
+                {
+				    $(this).closest('tr.MainTr').remove();
+				    renameMainRows();
+                }
 			});
 
   $('.delete-tr-ref').die().live('click',function() 
 			{	
                 var SelectedTr=$(this).closest('tr.MainTr');
-            
-				$(this).closest('tr').remove();
-				calculation(SelectedTr);
-				renameMainRows();
-				renameRefRows(SelectedTr);
-				
+                var count=$(this).closest("table tbody").find("tr").length;
+               
+                 if(count >= 2)
+                  {
+				        $(this).closest('tr').remove();
+                        calculation(SelectedTr);
+                        renameMainRows();
+                        renameRefRows(SelectedTr);
+                  }      
+                        
 			});
     $('.paymentType').die().live('change',function(){
         
@@ -643,8 +655,8 @@ jQuery(document).ready(function() {
 					$(this).find('td:nth-child(4) input.creditBox').attr({name:'receipt_rows['+i+'][credit]',id:'receipt_rows-'+i+'-credit'});
 					
 					if(cr_dr=='Dr'){
-						$(this).find('td:nth-child(3) input.debitBox').rules('add', 'required');
-						$(this).find('td:nth-child(4) input.creditBox').rules('remove', 'required');
+						$(this).find('td:nth-child(3) input.debitBox').rules('add','required');
+						$(this).find('td:nth-child(4) input.creditBox').rules('remove','required');
 						$(this).find('td:nth-child(4) span.help-block-error').remove();
 						var debit_amt=parseFloat($(this).find('td:nth-child(3) input.debitBox').val());
 						if(!debit_amt){
@@ -656,9 +668,9 @@ jQuery(document).ready(function() {
 						}
 						
 					}else{
-						$(this).find('td:nth-child(3) input.debitBox').rules('remove', 'required');
+						$(this).find('td:nth-child(3) input.debitBox');
 						$(this).find('td:nth-child(3) span.help-block-error').remove();
-						$(this).find('td:nth-child(4) input.creditBox').rules('add', 'required');
+						$(this).find('td:nth-child(4) input.creditBox');
 						var credit_amt=parseFloat($(this).find('td:nth-child(4) input.creditBox').val());
 						if(!credit_amt){
 							credit_amt=0;
@@ -758,16 +770,16 @@ jQuery(document).ready(function() {
 					var is_select=$(this).find('td:nth-child(2) select.refList').length;
 					var is_input=$(this).find('td:nth-child(2) input.ref_name').length;
 					if(is_select){
-						$(this).find('td:nth-child(2) select.refList').attr({name:'receipt_rows['+row_no+'][reference_details]['+i+'][ref_name]',id:'receipt_rows-'+row_no+'-reference_details-'+i+'-ref_name'}).rules('add', 'required');
+						$(this).find('td:nth-child(2) select.refList').attr({name:'receipt_rows['+row_no+'][reference_details]['+i+'][ref_name]',id:'receipt_rows-'+row_no+'-reference_details-'+i+'-ref_name'});
 					}else if(is_input){
-						$(this).find('td:nth-child(2) input.ref_name').attr({name:'receipt_rows['+row_no+'][reference_details]['+i+'][ref_name]',id:'receipt_rows-'+row_no+'-reference_details-'+i+'-ref_name'}).rules('add', 'required');
+						$(this).find('td:nth-child(2) input.ref_name').attr({name:'receipt_rows['+row_no+'][reference_details]['+i+'][ref_name]',id:'receipt_rows-'+row_no+'-reference_details-'+i+'-ref_name'});
 						$(this).find('td:nth-child(5) input.dueDays').attr({name:'receipt_rows['+row_no+'][reference_details]['+i+'][due_days]',id:'receipt_rows-'+row_no+'-reference_details-'+i+'-due_days'});
 					}
 					var Dr_Cr=$(this).find('td:nth-child(4) select option:selected').val();
 					if(Dr_Cr=='Dr'){
-						$(this).find('td:nth-child(3) input').attr({name:'receipt_rows['+row_no+'][reference_details]['+i+'][debit]',id:'receipt_rows-'+row_no+'-reference_details-'+i+'-debit'}).rules('add', 'required');;
+						$(this).find('td:nth-child(3) input').attr({name:'receipt_rows['+row_no+'][reference_details]['+i+'][debit]',id:'receipt_rows-'+row_no+'-reference_details-'+i+'-debit'});;
 					}else{
-						$(this).find('td:nth-child(3) input').attr({name:'receipt_rows['+row_no+'][reference_details]['+i+'][credit]',id:'receipt_rows-'+row_no+'-reference_details-'+i+'-credit'}).rules('add', 'required');;
+						$(this).find('td:nth-child(3) input').attr({name:'receipt_rows['+row_no+'][reference_details]['+i+'][credit]',id:'receipt_rows-'+row_no+'-reference_details-'+i+'-credit'});;
 					}
 					i++;
 				});
@@ -790,7 +802,7 @@ jQuery(document).ready(function() {
 				}
 			}
             $('.calculate_total').die().live('keyup',function()
-			{ alert();
+			{ 
 				 renameMainRows();
 			});
 			$('.calculation').die().live('keyup',function()
