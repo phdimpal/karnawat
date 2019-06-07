@@ -237,7 +237,7 @@
 	<div class="page-content-wrapper">
 		<div class="page-content">
 			
-							<button class="btn btn green align pull-right" id="btn_print"> print</button>
+							<button class="btn btn green align pull-right" id="btn_print"> Print</button>
 
 			<div class="row" id="printarea">
 				<div class="col-md-12">
@@ -499,6 +499,7 @@ jQuery(document).ready(function() {
 	$('#customer_id').select2();
 
 	$("#btn_print").click(function () {
+		 $('#btn_print').hide();
     //Hide all other elements other than printarea.
     $("#printarea").show();
     window.print();
