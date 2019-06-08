@@ -2,7 +2,7 @@
 <html lang="en" class="no-js">
 <head>
 <meta charset="utf-8"/>
-<title>Karnawat | Dashboard</title>
+<title>Karnawat | Packing List</title>
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta content="width=device-width, initial-scale=1" name="viewport"/>
 <meta content="" name="description"/>
@@ -237,7 +237,7 @@
 	<div class="page-content-wrapper">
 		<div class="page-content">
 			<h3 class="page-title">
-				Packing
+				Packing List
 			</h3>
 			<div class="page-bar">
 				<ul class="page-breadcrumb">
@@ -293,21 +293,21 @@
 								<div class="col-md-4">
 									<div class="form-group">
 										<label class="control-label">Export Reference</label>
-                                        <input type="text" class="form-control" name="export_reference_no." id="export_reference_no">
+                                        <input type="text" class="form-control" placeholder="Export Reference" name="export_reference_no." id="export_reference_no">
 
 									</div>
 								</div>
 								<div class="col-md-4">
                                         <div class="form-group">
                                             <label class="control-label">Buyer Order No.</label>
-                                             <input type="text" class="form-control" name="byuer_order_no." id="byuer_order_no">
+                                             <input type="text" class="form-control" placeholder="Buyer Order No." name="byuer_order_no." id="byuer_order_no">
                                            
                                         </div>
                                     </div>
                                     <div class="col-md-4">
                                             <div class="form-group">
                                                 <label class="control-label">Buyer Date</label>
-                                                <input type="text" id="byuer_date" name="byuer_date" class="form-control date-picker" placeholder="Date">
+                                                <input type="text" id="byuer_date" placeholder="Buyer Date" name="byuer_date" class="form-control date-picker" placeholder="Date">
                                             </div>
                                         </div>
 							</div>	
@@ -315,7 +315,7 @@
                                 <div class="col-md-4">
 									<div class="form-group">
 										<label class="control-label">Other Reference</label>
-										<textarea name="other_reference" class=" other_reference form-control " id="other_reference" required="">  </textarea>
+										<textarea name="other_reference" placeholder="Other Reference" class=" other_reference form-control " id="other_reference" required="">  </textarea>
 									
 									</div>
                                 </div>
@@ -332,7 +332,7 @@
                                <div class="col-md-4">
                                         <div class="form-group">
                                             <label class="control-label">Port of loading</label>
-                                             <input type="text" class="form-control" name="port_loading." id="port_loading">
+                                             <input type="text" placeholder="Port of loading" class="form-control" name="port_loading." id="port_loading">
                                            
                                         </div>
                                     </div>
@@ -343,7 +343,7 @@
                                 <div class="col-md-4">
 									<div class="form-group">
 										<label class="control-label">Port Of Discharge</label>
-										<input type="text" name="port_of_discharge" class=" port_of_discharge form-control " id="port_of_discharge" required="">
+										<input type="text" placeholder="Port Of Discharge" name="port_of_discharge" class=" port_of_discharge form-control " id="port_of_discharge" required="">
 									
 									</div>
                                 </div>
@@ -351,7 +351,7 @@
                                    <div class="col-md-4">
                                         <div class="form-group">
                                             <label class="control-label">Country Of Origin Goods</label>
-                                             <input type="text" class=" country_origin_goods form-control" name="country_origin_goods" id="country_origin_goods">
+                                             <input type="text" placeholder="Country Of Origin Goods" class=" country_origin_goods form-control" name="country_origin_goods" id="country_origin_goods">
                                            
                                         </div>
                                </div>
@@ -359,7 +359,7 @@
                                	 <div class="col-md-4">
 									<div class="form-group">
 										<label class="control-label">Country Of Final Destination</label>
-										<input type="text" name="country_final_destination" class=" country_final_destination form-control " id="country_final_destination" required="">
+										<input type="text" placeholder="Country Of Final Destination" name="country_final_destination" class=" country_final_destination form-control " id="country_final_destination" required="">
 									
 									</div>
                                 </div>
@@ -372,14 +372,14 @@
                                <div class="col-md-4">
                                         <div class="form-group">
                                             <label class="control-label">Vessel/Flight No.</label>
-                                             <input type="text" class=" vessel_flight_no form-control" name="vessel_flight_no" id="vessel_flight_no">
+                                             <input type="text" placeholder="Vessel/Flight No." class=" vessel_flight_no form-control" name="vessel_flight_no" id="vessel_flight_no">
                                            
                                         </div>
                                </div>
                                	<div class="col-md-4">
                                         <div class="form-group">
-                                            <label class="control-label">Final Destination EGYPT</label>
-                                             <input type="text" class=" final_destination form-control" name="final_destination" id="final_destination">
+                                            <label class="control-label">Final Destination </label>
+                                             <input type="text" placeholder="Final Destination" class=" final_destination form-control" name="final_destination" id="final_destination">
                                            
                                         </div>
                                </div>
@@ -389,17 +389,15 @@
 
 							<div class="row">
 								<div class="col-md-12">
-									<label class="control-label"><h4> <strong>Invoice Detail</strong> </h4></label>
+									<label class="control-label"><h4> <strong> Details</strong> </h4></label>
 									<div class="table-responsive">
 										<table class="table table-striped table-bordered" id="main_table">
 											<thead class="portlet box green util-btn-group">
 												<tr>
 													<th class="thColor" style="width: 20px">S.No</th>
-													<th class="thColor" style="width: 150px">Description</th>
-												
-													<th class="thColor" style="width: 30px">Quantity</th>
-													<th class="thColor" style="width: 50px">Rate</th>
-													<th class="thColor" style="width: 80px">Amount</th>
+													<th class="thColor" style="width: 150px">Marks & Nos/No & kind of pkgs</th>
+													<th class="thColor" style="width: 30px">PCS</th>
+													<th class="thColor" style="width: 50px">Unit</th>
 													<th class="thColor" style="width: 50px">Actions</th>
 												</tr>
 											</thead>
@@ -408,7 +406,7 @@
 											</tbody>
 											<tfoot>
 												<tr>
-													<td colspan="5" style="text-align:right"><b>Total</b></td>
+													<td colspan="3" style="text-align:right"><b>Total</b></td>
 													<td colspan="2" style="text-align:center">
 														<input style="width:200px;text-align:center" type="text" class="form-control sub_total" readonly name="sub_total">
 													</td>
@@ -419,15 +417,24 @@
 									</div>	
 								</div>	
                             </div>
-                            
+                            <div class="row">
+								<div class="col-md-4">
+									<label class="control-label">Gross Weight</label>	
+									<input type="text" class="form-control" name="gross_weight">									
+								</div>
+								<div class="col-md-4">
+										<label class="control-label">Net Weight</label>	
+										<input type="text" class="form-control" name="net_weight">									
+								</div>
+							</div>
 
                            
-
+						</div>	
 							<div class="form-actions right">
 								<button type="button" class="btn default">Cancel</button>
 								<button type="submit" class="btn green"><i class="fa fa-check"></i> Save</button>
 							</div>							
-						</div>	
+					
 					</form>	
 				</div>
 			</div>	
@@ -450,23 +457,19 @@
                   
 			<td style="vertical-align: inherit;"> 
 				<input type="text" name="quantity" class="quantity form-control" id="quantity" required>
-				<br/>
+				
+			</td>
+			<td style="vertical-align: inherit;"> 
+				
 				<select name="q" id="getunit" class="form-control">
-					<option>---Unit---</option>
-					<option value="Sq. Feet">Sq. Feet</option>
-					<option value="Sq. Meter">Sq. Meter</option>
-					<option value="MT">MT</option>
-					<option value="Cubic Meter">Cubic Meter</option>
-					<option value="Cubic Ft.">Cubic Ft.</option>
-					<option value="No. of Pieces">No. of Pieces</option>
-				</select>	
-			</td>
-			<td style="vertical-align: inherit;"> 
-				<label class="control-label showrate"></label>
-				<input type="text" name="rate" class="rate form-control" id="rate" required>
-			</td>
-			<td style="vertical-align: inherit;"> 
-				<input type="number" name="ammount" readonly class="ammount form-control" id="ammount" required>
+						<option>---Unit---</option>
+						<option value="Sq. Feet">Sq. Feet</option>
+						<option value="Sq. Meter">Sq. Meter</option>
+						<option value="MT">MT</option>
+						<option value="Cubic Meter">Cubic Meter</option>
+						<option value="Cubic Ft.">Cubic Ft.</option>
+						<option value="No. of Pieces">No. of Pieces</option>
+					</select>
 			</td>
 			<td style="vertical-align: inherit;"> 
 				<button type="button" id="plus_bank" class="btn btn-sm "><i class="fa fa-plus"></i></button>
