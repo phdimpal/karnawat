@@ -258,7 +258,7 @@
 				
 				</div>
 				<div class="portlet-body form">
-					<form id="reciept_form" action="#" class="horizontal-form">
+					<form id="company_form" action="#" class="horizontal-form">
 						<div class="form-body">
 							<div class="row">
 								<div class="col-md-4">
@@ -274,8 +274,7 @@
 								<div class="col-md-4">
 									<div class="form-group">
 										<label class="control-label">Transaction Date</label>
-										<input type="text" required
-										id="transaction_date" name="transaction_date" class="form-control date-picker" placeholder="Date">
+										<input type="text" id="transaction_date" name="transaction_date" class="form-control date-picker" placeholder="Date">
 									</div>
 								</div>
 							</div>	
@@ -343,7 +342,7 @@
                                 </div>
 							<div class="form-actions right">
 								<button type="button" class="btn default">Cancel</button>
-								<button type="submit" class="btn green"><i class="fa fa-check"></i> Update</button>
+								<button type="submit" class="btn green"><i class="fa fa-check"></i> Edit</button>
 							</div>							
 						</div>	
 					</form>	
@@ -430,8 +429,8 @@
                 
                 <td width="10%" valign="top">
                     <select name="cr_dr" class="form-control select2 cr_dr" >
-                        <option value="Cr">Cr</option>
-                        <option value="Dr"  selected="selected">Dr</option>
+                        <option value="Cr" >Cr</option>
+                        <option value="Dr" selected="selected">Dr</option>
                     </select>
                 </td>
                 <td width="65%" valign="top">
@@ -515,8 +514,6 @@ jQuery(document).ready(function() {
 	QuickSidebar.init(); // init quick sidebar
 	ComponentsPickers.init();
 	ComponentsDropdowns.init();
-
-	$('#reciept_form').validate();
   //////start code for reference detial
   $('.delete-tr').die().live('click',function() 
 			{	
@@ -655,8 +652,8 @@ jQuery(document).ready(function() {
 					$(this).find('td:nth-child(4) input.creditBox').attr({name:'receipt_rows['+i+'][credit]',id:'receipt_rows-'+i+'-credit'});
 					
 					if(cr_dr=='Dr'){
-						$(this).find('td:nth-child(3) input.debitBox').rules('add','required');
-						$(this).find('td:nth-child(4) input.creditBox').rules('remove','required');
+						$(this).find('td:nth-child(3) input.debitBox');
+						$(this).find('td:nth-child(4) input.creditBox');
 						$(this).find('td:nth-child(4) span.help-block-error').remove();
 						var debit_amt=parseFloat($(this).find('td:nth-child(3) input.debitBox').val());
 						if(!debit_amt){
