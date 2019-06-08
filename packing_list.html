@@ -396,7 +396,7 @@
 												<tr>
 													<th class="thColor" style="width: 20px">S.No</th>
 													<th class="thColor" style="width: 150px">Description</th>
-													<th class="thColor" style="width: 30px">HSN Code</th>
+												
 													<th class="thColor" style="width: 30px">Quantity</th>
 													<th class="thColor" style="width: 50px">Rate</th>
 													<th class="thColor" style="width: 80px">Amount</th>
@@ -413,24 +413,7 @@
 														<input style="width:200px;text-align:center" type="text" class="form-control sub_total" readonly name="sub_total">
 													</td>
 												</tr>
-												<tr>
-													<td colspan="5" style="text-align:right"><b>CGST 9%</b></td>
-													<td colspan="2" style="text-align:right">
-														<input type="text" style="width:200px;text-align:center" class="form-control cgst_amt" readonly name="cgst_amt">
-													</td>
-												</tr>
-												<tr>
-													<td colspan="5" style="text-align:right"><b>SGST 9%</b></td>
-													<td colspan="2" style="text-align:right">
-														<input type="text" style="width:200px;text-align:center" class="form-control sgst_amt" readonly name="sgst_amt">
-													</td>
-												</tr>
-												<tr>
-													<td colspan="5" style="text-align:right"><b>Total INR</b></td>
-													<td colspan="2" style="text-align:right">
-														<input type="text" style="width:200px;text-align:center" class="form-control total_amt" readonly name="total_amt">
-													</td>
-												</tr>
+												
 											</tfoot>
 										</table>
 									</div>	
@@ -464,9 +447,7 @@
 				<textarea  name="description" id="description" class=" form-control description"  required >
 				</textarea>
             </td>
-            <td style="vertical-align: inherit;"> 
-                    <input type="text" name="hsn_code" class="hsn_code form-control" id="hsn_code" required>
-            </td>        
+                  
 			<td style="vertical-align: inherit;"> 
 				<input type="text" name="quantity" class="quantity form-control" id="quantity" required>
 				<br/>
@@ -592,7 +573,7 @@ $(document).on('click','#plus_bank',function(){
 	]
   
   });
-            $(this).find('.hsn_code').attr('name','company_bank['+i+'][hsn_code]');
+           
             $(this).find('.quantity').attr('name','company_bank['+i+'][quantity]');
             $(this).find('#getunit').attr('name','company_bank['+i+'][unit]').select2();
 
@@ -659,10 +640,8 @@ $(document).on('click','#plus_bank',function(){
 			$('#main_table tbody#main_tbody_bank tr.main_tb').each(function(){ 
 				 quantity = $(this).find('.quantity').val();
 				
-				 rate = $(this).find('.rate').val();
-				 
-				 amount = quantity*rate;
-				 
+				 rate = $(this).find('.rate').val();				 
+				 amount = quantity*rate;			 
 				 if(isNaN(amount)){
 					amount
 				 }
@@ -671,11 +650,8 @@ $(document).on('click','#plus_bank',function(){
 			});
 			
 			$('.sub_total').val(amount);
-			var cgst =amount*9/100;
-			$('.cgst_amt').val(cgst);
-			$('.sgst_amt').val(cgst);
-			$('.total_amt').val(amount+cgst*2);
 		
+			$('.total_amt').val(amount);
 		}
 
 </script>
