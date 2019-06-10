@@ -122,12 +122,6 @@
 							<i class="icon-bar-chart"></i>
 							Company</a>
 						</li>
-						</li>
-						<li >
-							<a href="financial_month.html">
-							<i class="icon-bar-chart"></i>
-							Financial Month</a>
-						</li>
 						<li>
 							<a href="unit_list.html">
 							<i class="icon-bar-chart"></i>
@@ -204,9 +198,14 @@
 								<i class="fa fa-file"></i>
 								List</a>
 							</li>
-						
+							<li >
+									<a href="invoice_export_list.html">
+									<i class="fa fa-file"></i>
+									Export List</a>
+								</li>
 						</ul>
 					</li>
+				
 
 					<li>
 						<a href="javascript:;">
@@ -266,8 +265,8 @@
 							<div class="row">
 								<div class="col-md-4">
 									<div class="form-group">
-                                             <label class="control-label">Company Name</label>
-                                             <select name="company_name" class="form-control seect2" id="company_name">
+                                             <label class="control-label">Export Company Name</label>
+                                             <select name="company_name" class="form-control select2" id="company_name">
                                                  <option value="">--Select--</option>
                                                  <option value="karnawat">Karnawat</option>
                                                  <option value="Php Poets">Php Poets</option>
@@ -410,35 +409,140 @@
 													<th class="thColor">Rate</th>
 													<th class="thColor">Amount</th>
 												</tr>
+												<tr>
+													
+													<th colspan="6" class="thColor" style="text-align: center;vertical-align: inherit;">Purpose  Of Customer</th>
+													<th colspan="6" class="thColor" style="text-align: center;vertical-align: inherit;">Purpose Of Duty Under Bound</th>
+												</tr>
 											</thead>
 											 <tbody id="main_tbody_bank">
                                   
 											</tbody>
 											<tfoot>
 												<tr>
-													<td colspan="3" style="text-align:right"><b>Total</b></td>
+													<td colspan="4" style="text-align:right"><b>Total</b></td>
 													<td colspan="2" style="text-align:center">
 														<input style="width:200px;text-align:center" type="text" class="form-control sub_total" readonly name="sub_total">
 													</td>
+													<td colspan="4" style="text-align:right"><b>Without Payment of IGST Under Acknowledgement for IUT ARN</b></td>
+													<td colspan="2" style="text-align:center">
+														<input style="width:200px;text-align:center" type="text" value="AA080418013877V" class="form-control sub_total" readonly name="sub_total">
+													</td>
 												</tr>
+												<tr>
+													<td colspan="4" style="text-align:right"><b></b></td>
+													<td colspan="2" style="text-align:center">
+													</td>
+													<td colspan="4" style="text-align:right"><b>Total Invoice Value in Rs.</b></td>
+													<td colspan="2" style="text-align:center">
+														<input style="width:200px;text-align:center" type="text" value="" class="form-control sub_total" name="sub_total">
+													</td>
+												</tr>
+												<tr>
+													<td colspan="4" style="text-align:right"><b></b></td>
+													<td colspan="2" style="text-align:center">
+													</td>
+													<td colspan="6" style="text-align:center"><b>B-17 Bond Details</b></td>
 												
+												</tr>
+												<tr>
+														<td colspan="4" style="text-align:right"><b></b></td>
+														<td colspan="2" style="text-align:center">
+														</td>
+													<td colspan="6" style="text-align:center"><b>B-17 /UDR/22/2000 DT.13.11.2000 - 41 Lacs</b></td>
+													
+												
+												</tr>
+												<tr>
+														<td colspan="4" style="text-align:right"><b></b></td>
+														<td colspan="2" style="text-align:center">
+														</td>
+													<td colspan="6" style="text-align:center"><b>B-17 /UDR/22/2000 DT.18.10.2000 - 40 Lacs</b>
+													</td>
+												</tr>
+												<tr>
+														<td colspan="4" style="text-align:right"><b></b></td>
+														<td colspan="2" style="text-align:center">
+														</td>
+														<td colspan="6" style="text-align:center"><b>B-17/UDR/01/2008 DT.28.04.2018-400Lacs(in)(Rs.50 Lacs for Export Purpose)</b></td>
+												</tr>
+												<tr>
+														<td colspan="4" style="text-align:right"><b></b></td>
+														<td colspan="2" style="text-align:center">
+														</td>
+														<td colspan="6" style="text-align:center"><b>BCD Calcualtion for debit in B-17 Bond</b></td>
+												</tr>
+												<tr>
+													<td colspan="6"></td>
+													<td>BCD 20%</td>
+													<td colspan="2"><input type="text" class="form-control" name="bcd"></td>
+													<td>SWS 10%</td>
+													<td colspan="2"><input type="text" class="form-control" name="sws"></td>
+												</tr>
+												<tr>
+														<td colspan="6"></td>
+														<td colspan="4">Custom Portion</td>
+														<td colspan="2"><input type="text" class="form-control" name="sws"></td>
+												</tr>
+												<tr>
+														<td colspan="6"></td>
+														<td colspan="4">Available Value Under B-17 Bond</td>
+														<td colspan="2"><input type="text" class="form-control" name="sws"></td>
+												</tr>
+												<tr>
+														<td colspan="6"></td>
+														<td colspan="4">Add :Duty Credit</td>
+														<td colspan="2"><input type="text" class="form-control" name="sws"></td>
+												</tr>
+												<tr>
+														<td colspan="6"></td>
+														<td colspan="4">Less :Total Duty & IGST</td>
+														<td colspan="2"><input type="text" class="form-control" name="sws"></td>
+												</tr>
+												<tr>
+														<td colspan="6"></td>
+														<td colspan="4">Balance Value Under Bond</td>
+														<td colspan="2"><input type="text" class="form-control" name="sws"></td>
+												</tr>
 											</tfoot>
 										</table>
 									</div>	
 								</div>	
                             </div>
-                            <div class="row">
-								<div class="col-md-4">
-									<label class="control-label">Gross Weight</label>	
-									<input type="text" class="form-control" name="gross_weight">									
-								</div>
-								<div class="col-md-4">
-										<label class="control-label">Net Weight</label>	
-										<input type="text" class="form-control" name="net_weight">									
-								</div>
+                            
+							<label class="control-label"><b>Terms & Condition</b></label>
+							<div class="row">
+									<div class="col-md-2">
+										<label class="control-label">Payment</label>	
+										<input type="text" class="form-control" name="gross_weight">									
+									</div>
+									<div class="col-md-2">
+											<label class="control-label">Delivery</label>	
+											<input type="text" class="form-control" name="net_weight">									
+									</div>
+									<div class="col-md-2">
+											<label class="control-label">Container No</label>	
+											<input type="text" class="form-control" name="net_weight">									
+									</div>
+									<div class="col-md-2">
+											<label class="control-label">OTS RFID Seal No</label>	
+											<input type="text" class="form-control" name="net_weight">									
+									</div>
+									<div class="col-md-2">
+											<label class="control-label">Time Of Removal</label>	
+											<input type="text" class="form-control" name="net_weight">									
+									</div>
 							</div>
-
-                           
+							<div class="row">
+									<div class="col-md-4">
+										<label class="control-label">Gross Weight</label>	
+										<input type="text" class="form-control" name="gross_weight">									
+									</div>
+									<div class="col-md-4">
+											<label class="control-label">Net Weight</label>	
+											<input type="text" class="form-control" name="net_weight">									
+									</div>
+								</div>
 						</div>	
 							<div class="form-actions right">
 								<button type="button" class="btn default">Cancel</button>
