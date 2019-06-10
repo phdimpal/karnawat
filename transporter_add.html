@@ -325,7 +325,7 @@
 								</td>
 								
 								<td>
-									<a href="#modelboxedit" class="btn btn-icon-only green" data-toggle="modal">
+									<a href="#modelboxedid" class="btn btn-icon-only green" data-toggle="modal">
 											<i class="fa fa-edit"></i>
 									</a>
 									
@@ -391,7 +391,6 @@
 				
 					<!-- END EXAMPLE TABLE PORTLET-->
 				</div>
-
 			</div>
 		
 	
@@ -458,6 +457,8 @@
 <script src="assets/admin/pages/scripts/table-managed.js"></script>
 <script>
 jQuery(document).ready(function() {
+
+
 
 $('.alert_conform').click(function() {
 
@@ -529,7 +530,7 @@ $('.alert_conform').click(function() {
 
 <!-- Modal For Edit Data -->
 
-<div id="modelboxedit" class="modal fade" role="dialog">
+<div id="modelboxedid" class="modal fade" role="dialog">
   <div class="modal-dialog">
 
     <!-- Modal content-->
@@ -546,7 +547,7 @@ $('.alert_conform').click(function() {
         		<div class="col-md-6 col-sm-6"> 
 			             <div class="form-group">
 						   <label for="unitname">Transporter type:</label>
-						   <input type="text" name="unit_name" class="form-control" id="unit_name" value="Transporter Name">
+						   <input type="text" name="transport_type" class="form-control" id="transport_type" value="Transporter Name" required="">
 						 </div>
                 </div>
 				<div class="col-md-6 col-sm-6"> 		 
@@ -567,5 +568,21 @@ $('.alert_conform').click(function() {
 
 
 </body>
+<script>
+$('#unit_type').validate({
+    rules : {
+        unit_type : {
+            required : true,
+            max : availablePoints
+        }
+    },
+    messages : {
+        unit_type : {
+            required : 'Please enter the total loyalty points you wish to apply to this order.',
+            max : 'You may only apply '+availablePoints+' to this order.'
+        }
+    }
+});
+</script>
 <!-- END BODY -->
 </html>
