@@ -239,7 +239,8 @@
 			<button class="btn btn green align pull-right" id="btn_print"> Print</button>
 
 			<div class="row" id="printarea">
-				<div class="col-md-12">
+				<div class="col-md-1"></div>
+				<div class="col-md-10">
 					<div class="table responsive">
 
 						<table border="1" width="100%">
@@ -656,6 +657,135 @@
 										<td style="text-align:center;"> </td>
 										<td></td>
 									</tr>
+									<tr>
+										<td></td>
+										<td></td>
+										<td></td>
+										<td></td>
+										<td></td>
+										<td></td>
+										<td></td>
+										<td colspan="2" style="text-align:center;"> Custom Portion</td>
+										
+										<td style="text-align:center;"> </td>
+										<td></td>
+									</tr>
+									<tr>
+										<td></td>
+										<td></td>
+										<td></td>
+										<td></td>
+										<td></td>
+										<td></td>
+										<td colspan="3" style="text-align:left;"> Available Value Under B-17 Bond</td>
+										<td colspan="2"></td>
+									</tr>
+									<tr>
+										<td></td>
+										<td></td>
+										<td></td>
+										<td></td>
+										<td></td>
+										<td></td>
+										<td colspan="3" style="text-align:left;">Add: Duty Credit</td>
+										<td colspan="2"></td>
+									</tr>
+									<tr>
+										<td></td>
+										<td></td>
+										<td></td>
+										<td></td>
+										<td></td>
+										<td></td>
+										<td colspan="3" style="text-align:left;">Less:Total Duty & IGST</td>
+										<td colspan="2"></td>
+									</tr>
+									<tr>
+										<td></td>
+										<td></td>
+										<td></td>
+										<td></td>
+										<td></td>
+										<td></td>
+										<td colspan="3" style="text-align:left;">Balance Value Under Bond</td>
+										<td colspan="2"></td>
+									</tr>
+									<tr>
+										<td colspan="3" style="text-align:center;">
+											<h3 style="color: black"><b>Total</b></h3>
+										</td>
+										
+										<td>0.00</td>
+										<td></td>
+										<td>0.00</td>
+										<td colspan="5" style="text-align:left;">BANK dETAILS: INDUSTAN BANK LTD</td>
+										
+									</tr>
+									<tr>
+										<td colspan="6" style="text-align:left;">
+											Total Invoice amount in words
+										</td>
+										
+										
+										<td colspan="5" style="text-align:left;">GIRIDHAR COMPLAX, AARJI NO.41/3 NATHDWARA ROAD</td>
+										
+									</tr>
+									<tr>
+										<td colspan="6" style="text-align:left;">
+											RS.
+										</td>
+										<td colspan="5" style="text-align:left;">RAJSAMAND(RAJ.)</td>
+									</tr>
+									<tr>
+										<td colspan="6" style="text-align:left;">
+											
+										</td>
+										<td colspan="5" style="text-align:left;">CA A/C NO.200013333887</td>
+									</tr>
+									<tr>
+										<td colspan="6" style="text-align:left;">
+											Gross wt.:
+										</td>
+										<td colspan="5" style="text-align:left;">SWIFT CODE: INDBINBBXXX</td>
+									</tr>
+									<tr>
+										<td colspan="6" style="text-align:left;">
+											Terms & conditions
+										</td>
+										<td colspan="5" style="text-align:left;">certified that the particulars givin above are true and correct</td>
+									</tr>
+									<tr>
+										<td colspan="6" style="text-align:left;">
+											payment:
+										</td>
+										<td colspan="5" style="text-align:left;">For karnawat international pvt.ltd.</td>
+									</tr>
+									<tr>
+										<td colspan="6" style="text-align:left;">
+											Delivery:
+										</td>
+										<td colspan="5" style="text-align:left;"></td>
+									</tr>
+									<tr>
+										<td colspan="6" style="text-align:left;">
+										Container No
+										</td>
+										<td colspan="5" style="text-align:left;"></td>
+									</tr>
+									<tr>
+										<td colspan="6" style="text-align:left;">
+										OTS RFID SEAL NO.
+										</td>
+										<td colspan="5" style="text-align:left;"></td>
+									</tr>
+									<tr>
+										<td colspan="6" style="text-align:left;">
+										Time of removal
+										</td>
+										<td colspan="5" style="text-align:center;"> Authorised signatory</td>
+									</tr>
+
+
 
 							</table>
 								
@@ -742,62 +872,7 @@ jQuery(document).ready(function() {
 
 });
 
-add_row_bank();
-rename_row_bank();
-$(document).on('click','#plus_bank',function(){
-           add_row_bank();
-      });
-       $(document).on('click','#minus_bank',function(){
-           var count=$('#main_tbody_bank').children().length;
-            if(count >= 2)
-            {
-              $(this).parent().parent().remove();
-              rename_row_bank();
-            }
-        });
 
-   function add_row_bank()
-    {
-      var tr = $('#sub-body_bank>tr:last').clone();
-
-      $('#main_tbody_bank').append(tr);
-
-           $('#main_tbody_bank').find('tr').each(function()
-        {
-            $(this).find('.product_id').attr('autofocus','autofocus');
-
-        });
-      rename_row_bank();
-    }
-
-      function rename_row_bank()
-      {
-        var i=0;
-        $('#main_tbody_bank').find('tr').each(function()
-        {
-            i++;
-            $(this).find('.index_bank').html(i);
-
-            $(this).find('.description').attr('name','company_bank['+i+'][description]').ckeditor({
-	toolbar: [
-		{ name: 'styles', items: [ 'Styles', 'Format', 'Font', 'FontSize' ] },
-		{ name: 'colors', items: [ 'TextColor', 'BGColor' ] },
-		{ name: 'paragraph', groups: [ 'list', 'indent', 'blocks', 'align', 'bidi' ] },
-	]
-  
-  });
-
-            $(this).find('.quantity').attr('name','company_bank['+i+'][quantity]');
-            $(this).find('#getunit').attr('name','company_bank['+i+'][unit]').select2();
-
-            $(this).find('.rate').attr('name','company_bank['+i+'][rate]');
-
-             $(this).find('.ammount').attr('name','company_bank['+i+'][ammount]');
-            
-            
-          });
-          
-       }
  
      
         $(document).ready(function () {
