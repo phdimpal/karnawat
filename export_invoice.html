@@ -2,7 +2,7 @@
 <html lang="en" class="no-js">
 <head>
 <meta charset="utf-8"/>
-<title>Karnawat | Packing List</title>
+<title>Karnawat | Export Invoice</title>
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta content="width=device-width, initial-scale=1" name="viewport"/>
 <meta content="" name="description"/>
@@ -14,7 +14,9 @@
 <link href="assets/global/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
 <link href="assets/global/plugins/uniform/css/uniform.default.css" rel="stylesheet" type="text/css"/>
 <link href="assets/global/plugins/bootstrap-switch/css/bootstrap-switch.min.css" rel="stylesheet" type="text/css"/>
-<link href="assets/global/plugins/select2/select2.css" rel="stylesheet" type="text/css"/>
+<link rel="stylesheet" type="text/css" href="assets/global/plugins/bootstrap-select/bootstrap-select.min.css"/>
+<link rel="stylesheet" type="text/css" href="assets/global/plugins/select2/select2.css"/>
+<link rel="stylesheet" type="text/css" href="assets/global/plugins/jquery-multi-select/css/multi-select.css"/>
 <link href="assets/global/css/components.css" id="style_components" rel="stylesheet" type="text/css"/>
 <link href="assets/global/css/plugins.css" rel="stylesheet" type="text/css"/>
 <link href="assets/admin/layout/css/layout.css" rel="stylesheet" type="text/css"/>
@@ -364,7 +366,22 @@
                                </div>
                             
 							</div>
-
+							<div class="row">
+								<div class="col-md-4">
+									<label class="control-label">Customer</label>
+									<select name="customer_id" class="form-control select2" required>
+											<option value="">---Select---</option>
+											<option value="karnawat">Karnawat Marbles</option>
+									</select>
+								</div>
+								<div class="col-md-4">
+										<label class="control-label">Customer Contact Person</label>
+										<select name="customer_contact_id" class="form-control select2" required multiple>
+												<option value="">---Select---</option>
+												<option value="karnawat">Karnawat Marbles</option>
+										</select>
+									</div>
+							</div>	
 							<div class="row">
 								<div class="col-md-12">
 									<label class="control-label"><h4> <strong> Details</strong> </h4></label>
@@ -372,11 +389,26 @@
 										<table class="table table-striped table-bordered" id="main_table">
 											<thead class="portlet box green util-btn-group">
 												<tr>
-													<th class="thColor" style="width: 20px">S.No</th>
-													<th class="thColor" style="width: 150px">Marks & Nos/No & kind of pkgs</th>
-													<th class="thColor" style="width: 30px">PCS</th>
-													<th class="thColor" style="width: 50px">Unit</th>
-													<th class="thColor" style="width: 50px">Actions</th>
+													<th rowspan="2"  class="thColor" style="vertical-align: inherit;width: 20px">S.No</th>
+													<th  rowspan="2" class="thColor" width="50%" style="vertical-align: inherit;width: 150px">Product Description</th>
+													<th rowspan="2" class="thColor" style="vertical-align: inherit;width: 30px">HSN Code</th>
+													<th  class="thColor" style="width: 50px">Qty</th>
+													<th class="thColor" style="width: 50px">Rate</th>
+													<th class="thColor" style="width: 50px">Amount</th>
+													<th rowspan="2" class="thColor" style="width: 50px;vertical-align: inherit;">Exchange Rate</th>
+													<th class="thColor" style="width: 50px">Assessible Value</th>
+													<th colspan="2" class="thColor" style="width: 50px;vertical-align: inherit;">Duty & IGST</th>
+													<th  rowspan="2" class="thColor" style="width: 50px;vertical-align: inherit;">Assemble Value</th>
+													<th  rowspan="2" class="thColor" style="width: 50px;vertical-align: inherit;">Action</th>
+												</tr>
+												<tr>
+													
+													<th class="thColor">(SQM)</th>
+													<th class="thColor">(US$/SQM)</th>
+													<th class="thColor">US$</th>
+													<th class="thColor">(In INR)</th>
+													<th class="thColor">Rate</th>
+													<th class="thColor">Amount</th>
 												</tr>
 											</thead>
 											 <tbody id="main_tbody_bank">
@@ -428,7 +460,7 @@
 			<td style="vertical-align: inherit;" class="index_bank"> 
 				<input class="index_bank" type="number" name="id_bank">
 			</td>
-			<td style="vertical-align: inherit;"> 
+			<td width="50%" style="vertical-align: inherit;"> 
 				<textarea  name="description" id="description" class=" form-control description"  required >
 				</textarea>
             </td>
@@ -438,17 +470,37 @@
 				
 			</td>
 			<td style="vertical-align: inherit;"> 
-				
-				<select name="q" id="getunit" class="form-control">
-						<option>---Unit---</option>
-						<option value="Sq. Feet">Sq. Feet</option>
-						<option value="Sq. Meter">Sq. Meter</option>
-						<option value="MT">MT</option>
-						<option value="Cubic Meter">Cubic Meter</option>
-						<option value="Cubic Ft.">Cubic Ft.</option>
-						<option value="No. of Pieces">No. of Pieces</option>
-					</select>
-			</td>
+					<input type="text" name="quantity" class="quantity form-control" id="quantity" required>
+					
+				</td>
+				<td style="vertical-align: inherit;"> 
+						<input type="text" name="quantity" class="quantity form-control" id="quantity" required>
+						
+					</td>
+					<td style="vertical-align: inherit;"> 
+							<input type="text" name="quantity" class="quantity form-control" id="quantity" required>
+							
+						</td>
+						<td style="vertical-align: inherit;"> 
+								<input type="text" name="quantity" class="quantity form-control" id="quantity" required>
+								
+							</td>
+							<td style="vertical-align: inherit;"> 
+									<input type="text" name="quantity" class="quantity form-control" id="quantity" required>
+									
+								</td>
+								<td style="vertical-align: inherit;"> 
+										<input type="text" name="quantity" class="quantity form-control" id="quantity" required>
+										
+									</td>
+									<td style="vertical-align: inherit;"> 
+											<input type="text" name="quantity" class="quantity form-control" id="quantity" required>
+											
+										</td>
+										<td style="vertical-align: inherit;"> 
+												<input type="text" name="quantity" class="quantity form-control" id="quantity" required>
+												
+											</td>
 			<td style="vertical-align: inherit;"> 
 				<button type="button" id="plus_bank" class="btn btn-sm "><i class="fa fa-plus"></i></button>
 				<button type="button" id="minus_bank" class="btn btn-sm "><i class="fa fa-minus"></i></button>
@@ -507,7 +559,7 @@ jQuery(document).ready(function() {
 	$('#reversce_charge').select2();
 	$('#state_name').select2();
 	
-	
+	$('#customer_contact_id').select2();
 	
 });
 
