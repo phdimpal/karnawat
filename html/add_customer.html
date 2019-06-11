@@ -112,6 +112,7 @@
 					</div>
 					<!-- END SIDEBAR TOGGLER BUTTON -->
 				</li>
+				
 					<li class="start active open">
 					<a href="javascript:;">
 						<i class="icon-home"></i>
@@ -131,12 +132,6 @@
 							<a href="company_list.html">
 							<i class="icon-bar-chart"></i>
 							Company</a>
-						</li>
-						</li>
-						<li >
-							<a href="financial_month.html">
-							<i class="icon-bar-chart"></i>
-							Financial Month</a>
 						</li>
 						<li>
 							<a href="unit_list.html">
@@ -214,10 +209,13 @@
 								<i class="fa fa-file"></i>
 								List</a>
 							</li>
-						
+							<li >
+									<a href="invoice_export_list.html">
+									<i class="fa fa-file"></i>
+									Export List</a>
+								</li>
 						</ul>
 					</li>
-
 					<li>
 						<a href="javascript:;">
 						<i class="icon-folder"></i>
@@ -524,7 +522,8 @@
 <script src="assets/admin/layout/scripts/layout.js" type="text/javascript"></script>
 <script src="assets/admin/layout/scripts/quick-sidebar.js" type="text/javascript"></script>
 <script src="assets/admin/layout/scripts/demo.js" type="text/javascript"></script>
-
+<script src="assets/admin/pages/scripts/index.js" type="text/javascript"></script>
+<script src="assets/admin/pages/scripts/tasks.js" type="text/javascript"></script>
 <script src="assets/global/js/jquery.validate.min.js" type="text/javascript"></script>
 <script src="assets/global/js/additional-methods.min.js" type="text/javascript"></script>
 <script src="assets/admin/pages/scripts/components-pickers.js" type="text/javascript"></script>
@@ -541,28 +540,21 @@ jQuery(document).ready(function() {
 	Index.init(); 
 	ComponentsPickers.init();
 	ComponentsDropdowns.init();
-
 });
+
 jQuery(document).ready(function() {    
 
 	$('#country_name').select2();
 	$('#state_name').select2();
 	$('#city_name').select2();
-
-
 	});
-
-
 </script>
-
      <!--------------Custom js script End------------------->
 
 <!-----------------script for add row Company Address------------------->
-     
 <script type="text/javascript">
 add_row();
 add_contact_row();
-
 $(document).on('click','#plus',function(){
            add_row();
       });
@@ -586,7 +578,6 @@ $(document).on('click','#plus',function(){
               rename_contact_row();
             }
     });			
-
    function add_contact_row()
     {
       var tr = $('#address_sub_body>tr:last').clone();
@@ -622,10 +613,10 @@ $(document).on('click','#plus',function(){
         {
             i++;
             $(this).find('.index').html(i);
-						$(this).find('.person_name').attr('name','company_addresses['+i+'][address]');
-						$(this).find('#state_name_add').attr('name','company_addresses['+i+'][state_id]').select2();
-						$(this).find('#city_name_add').attr('name','company_addresses['+i+'][city_id]').select2();
-            $(this).find('.is_default').attr('name','company_addresses['+i+'][is_default]');
+						$(this).find('.person_name').attr('name','customer_addresses['+i+'][address]');
+						$(this).find('#state_name_add').attr('name','customer_addresses['+i+'][state_id]').select2();
+						$(this).find('#city_name_add').attr('name','customer_addresses['+i+'][city_id]').select2();
+            $(this).find('.is_default').attr('name','customer_addresses['+i+'][is_default]');
             
           });
           
@@ -648,8 +639,6 @@ $(document).on('click','#plus',function(){
      </script>
 
 <!--------------script END for add row Customer Address--------------->
-
-
 <script>
   
   $(document).ready(function(){
@@ -675,7 +664,7 @@ $.validator.addMethod("gst", function(value3, element3) {
     } else {
       return false;
     }
-
+alert("call");
   }, "Please specify a valid GSTTIN Number");
      $('#cus_form').validate({
 
@@ -683,10 +672,8 @@ $.validator.addMethod("gst", function(value3, element3) {
 
         customer_name:{
           required:true,
-         
           lettersonly:true,
         },
-
         customer_email:{
 
           required:true,
@@ -722,10 +709,7 @@ $.validator.addMethod("gst", function(value3, element3) {
         addresses:{
 
                   required:true,
-
-
         },
-
 
       },
 

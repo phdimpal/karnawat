@@ -14,7 +14,11 @@
 <link href="assets/global/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
 <link href="assets/global/plugins/uniform/css/uniform.default.css" rel="stylesheet" type="text/css"/>
 <link href="assets/global/plugins/bootstrap-switch/css/bootstrap-switch.min.css" rel="stylesheet" type="text/css"/>
+
+<!----css for select menu start------>
 <link href="assets/global/plugins/select2/select2.css" rel="stylesheet" type="text/css"/>
+<!----css for select menu end------>
+
 <link href="assets/global/css/components.css" id="style_components" rel="stylesheet" type="text/css"/>
 <link href="assets/global/css/plugins.css" rel="stylesheet" type="text/css"/>
 <link href="assets/admin/layout/css/layout.css" rel="stylesheet" type="text/css"/>
@@ -120,12 +124,6 @@
 							<i class="icon-bar-chart"></i>
 							Company</a>
 						</li>
-						</li>
-						<li >
-							<a href="financial_month.html">
-							<i class="icon-bar-chart"></i>
-							Financial Month</a>
-						</li>
 						<li>
 							<a href="unit_list.html">
 							<i class="icon-bar-chart"></i>
@@ -202,10 +200,13 @@
 								<i class="fa fa-file"></i>
 								List</a>
 							</li>
-						
+							<li >
+									<a href="invoice_export_list.html">
+									<i class="fa fa-file"></i>
+									Export List</a>
+								</li>
 						</ul>
 					</li>
-
 					<li>
 						<a href="javascript:;">
 						<i class="icon-folder"></i>
@@ -606,8 +607,12 @@ jQuery(document).ready(function() {
 	QuickSidebar.init(); // init quick sidebar
 	ComponentsPickers.init();
 	ComponentsDropdowns.init();
-	$('#customer_id').select2();
-	$('#company_name').select2();
+	$('#transporter_id').select2();
+	$('#drcr').select2();
+	$('#ref_type').select2();
+	$('#destination').select2();
+	
+	
 });
 
 add_row_bank();

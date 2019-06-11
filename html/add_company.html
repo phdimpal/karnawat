@@ -96,7 +96,6 @@
 	<div class="page-sidebar-wrapper">
 	
 		<div class="page-sidebar navbar-collapse collapse">
-			
 			<ul class="page-sidebar-menu " data-keep-expanded="false" data-auto-scroll="true" data-slide-speed="200">
 				<!-- DOC: To remove the sidebar toggler from the sidebar you just need to completely remove the below "sidebar-toggler-wrapper" LI element -->
 				<li class="sidebar-toggler-wrapper">
@@ -125,12 +124,6 @@
 							<a href="company_list.html">
 							<i class="icon-bar-chart"></i>
 							Company</a>
-						</li>
-						</li>
-						<li >
-							<a href="financial_month.html">
-							<i class="icon-bar-chart"></i>
-							Financial Month</a>
 						</li>
 						<li>
 							<a href="unit_list.html">
@@ -208,10 +201,13 @@
 								<i class="fa fa-file"></i>
 								List</a>
 							</li>
-						
+							<li >
+									<a href="invoice_export_list.html">
+									<i class="fa fa-file"></i>
+									Export List</a>
+								</li>
 						</ul>
 					</li>
-
 					<li>
 						<a href="javascript:;">
 						<i class="icon-folder"></i>
@@ -549,7 +545,7 @@ jQuery(document).ready(function() {
 	Index.init(); 
 	ComponentsPickers.init();
 	ComponentsDropdowns.init();
-
+	alert("select call");
 });
 jQuery(document).ready(function() {    
 
@@ -557,7 +553,6 @@ jQuery(document).ready(function() {
 	$('#state_name').select2();
 	$('#city_name').select2();	
 });
-
 
 add_row();
 
