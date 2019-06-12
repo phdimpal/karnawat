@@ -1,0 +1,40 @@
+.thColor {
+	color:#FFFFFF;
+}
+
+.error{
+	color:#c71515 !important;
+}
+
+.btn-icon-only {
+    		height: 20px !important;
+    		width: 26px !important;
+		}
+
+	.btn {
+		padding: 2px 6px !important;
+	}	
+
+	.btn_add{
+		    background: transparent !important;
+		    background-color: transparent !important;
+		    border: 1px solid #fff !important;
+		    color: #fff !important;
+	}
+
+	.btn-fa-icon{
+		    color: #fff !important;
+	}
+	.table-align{
+		vertical-align:inherit !important;
+	}
+
+
+	.tablescroll {
+		background-color: #26a69a;	
+		position: sticky;
+		top: 0;
+		z-index: 11;
+	}
+
+
